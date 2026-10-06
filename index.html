@@ -356,7 +356,6 @@
         <a class="nav-link" href="index.html#home">Home</a>
         <a class="nav-link" href="index.html#about">About Us</a>
         <a class="nav-link" href="index.html#news">News</a>
-        <a class="nav-link" href="index.html#directory">Directory</a>
         <a class="nav-link" href="index.html#gallery">Gallery</a>
         <a class="nav-link" href="index.html#projects">Projects</a>
         <a class="nav-link" href="index.html#events">Events</a>
@@ -385,13 +384,13 @@
         <p class="admin-subtitle">Manage the Chamber's existing records directly. Your database structure and permissions stay unchanged.</p>
         <div class="admin-tabs" id="adminTabs" role="tablist" aria-label="Admin collections">
           <button type="button" class="nav-link admin-tab-button active" id="tab-adminNews" data-tab="adminNews" role="tab" aria-controls="adminNews" aria-selected="true">News</button>
-          <button type="button" class="nav-link admin-tab-button" id="tab-adminMembers" data-tab="adminMembers" role="tab" aria-controls="adminMembers" aria-selected="false" tabindex="-1">Members</button>
           <button type="button" class="nav-link admin-tab-button" id="tab-adminGallery" data-tab="adminGallery" role="tab" aria-controls="adminGallery" aria-selected="false" tabindex="-1">Gallery</button>
           <button type="button" class="nav-link admin-tab-button" id="tab-adminCommittee" data-tab="adminCommittee" role="tab" aria-controls="adminCommittee" aria-selected="false" tabindex="-1">Committee</button>
           <button type="button" class="nav-link admin-tab-button" id="tab-adminProjects" data-tab="adminProjects" role="tab" aria-controls="adminProjects" aria-selected="false" tabindex="-1">Projects</button>
           <button type="button" class="nav-link admin-tab-button" id="tab-adminMedia" data-tab="adminMedia" role="tab" aria-controls="adminMedia" aria-selected="false" tabindex="-1">Site Media</button>
           <button type="button" class="nav-link admin-tab-button" id="tab-adminClippings" data-tab="adminClippings" role="tab" aria-controls="adminClippings" aria-selected="false" tabindex="-1">Newspaper Clippings</button>
           <button type="button" class="nav-link admin-tab-button" id="tab-membershipApps" data-tab="membershipApps" role="tab" aria-controls="membershipApps" aria-selected="false" tabindex="-1">Membership Applications</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-membershipMembers" data-tab="membershipMembers" role="tab" aria-controls="membershipMembers" aria-selected="false" tabindex="-1">Members</button>
           <button type="button" class="nav-link admin-tab-button" id="tab-certificateRequests" data-tab="certificateRequests" role="tab" aria-controls="certificateRequests" aria-selected="false" tabindex="-1">Certificate Requests</button>
         </div>
         <div id="adminNews" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminNews" tabindex="0">
@@ -406,7 +405,6 @@
             </div>
           </div>
         </div>
-        <div id="adminMembers" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminMembers" tabindex="0" hidden></div>
         <div id="adminGallery" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminGallery" tabindex="0" hidden></div>
         <div id="adminCommittee" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminCommittee" tabindex="0" hidden></div>
         <div id="adminProjects" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminProjects" tabindex="0" hidden></div>
@@ -415,10 +413,18 @@
         <div id="membershipApps" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-membershipApps" tabindex="0" hidden>
           <div class="application-toolbar">
             <div><h2 class="gradient-text">Membership Applications</h2><p>Review applications, publish membership details, and keep office notes in one place.</p></div>
-            <div class="application-filter"><div class="field"><label for="membershipStatusFilter">Application status</label><select id="membershipStatusFilter"><option value="">All</option><option value="Pending">Pending</option><option value="Approved">Approved</option><option value="Rejected">Rejected</option></select></div><button type="button" class="icon-button" id="membershipAppsRefresh" aria-label="Refresh membership applications"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg></button></div>
+            <div class="application-filter"><div class="field"><label for="membershipStatusFilter">Application status</label><select id="membershipStatusFilter"><option value="">All</option><option value="Pending">Pending</option><option value="Rejected">Rejected</option></select></div><button type="button" class="icon-button" id="membershipAppsRefresh" aria-label="Refresh membership applications"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg></button></div>
           </div>
           <p class="results-count application-count" id="membershipAppsCount" role="status"></p>
           <div class="application-list" id="membershipAppsList"></div>
+        </div>
+        <div id="membershipMembers" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-membershipMembers" tabindex="0" hidden>
+          <div class="application-toolbar">
+            <div><h2 class="gradient-text">Members</h2><p>Approved members with every detail and document from their application. Setting a member's status back to Pending or Rejected moves them to Membership Applications.</p></div>
+            <div class="application-filter"><div class="field"><label for="membersSearch">Search members</label><input type="search" id="membersSearch" placeholder="Name, membership no., mobile..." autocomplete="off"></div><button type="button" class="icon-button" id="membersRefresh" aria-label="Refresh members"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg></button></div>
+          </div>
+          <p class="results-count application-count" id="membersCount" role="status"></p>
+          <div class="application-list" id="membersList"></div>
         </div>
         <div id="certificateRequests" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-certificateRequests" tabindex="0" hidden>
           <div class="application-toolbar">
@@ -479,14 +485,18 @@
         adminDirty: false, adminBusy: false, adminLoading: null
       };
       const adminTabCollections = {
-        adminNews: 'news_posts', adminMembers: 'directory_members', adminGallery: 'gallery_images',
+        adminNews: 'news_posts', adminGallery: 'gallery_images',
         adminCommittee: 'committee_members', adminProjects: 'projects', adminMedia: 'site_media',
         adminClippings: 'newspaper_clippings'
       };
       const membershipAppsState = {
         filter: '', rows: [], requestVersion: 0, loading: false, publishing: false,
-        drafts: new Map(), notes: new Map(), openDetails: new Set()
+        drafts: new Map(), notes: new Map(), openDetails: new Set(), view: 'applications'
       };
+      // The same table feeds two tabs: "Membership Applications" shows everything
+      // that is not yet Approved; "Members" shows only Approved ones.
+      function appsList() { return $(membershipAppsState.view === 'members' ? '#membersList' : '#membershipAppsList'); }
+      function appsCount() { return $(membershipAppsState.view === 'members' ? '#membersCount' : '#membershipAppsCount'); }
       const membershipStatuses = ['Pending', 'Approved', 'Rejected'];
       const membershipDocumentFields = [
         ['doc_certificate_url', 'Certificate'], ['doc_pan_url', 'PAN'],
@@ -1148,7 +1158,8 @@
           item.setAttribute('aria-selected', String(active));
           item.tabIndex = active ? 0 : -1;
         });
-        if (tabId === 'membershipApps') {
+        if (tabId === 'membershipApps' || tabId === 'membershipMembers') {
+          membershipAppsState.view = tabId === 'membershipMembers' ? 'members' : 'applications';
           loadMembershipApplications();
         } else if (tabId === 'certificateRequests') {
           loadCertificateRequests();
@@ -1189,7 +1200,8 @@
       function updateMembershipControlLocks() {
         $('#membershipStatusFilter').disabled = membershipAppsState.publishing;
         $('#membershipAppsRefresh').disabled = membershipAppsState.loading || membershipAppsState.publishing;
-        $$('.application-edit input, .application-edit select, .application-edit button', $('#membershipAppsList')).forEach(function (element) {
+        $('#membersRefresh').disabled = membershipAppsState.loading || membershipAppsState.publishing;
+        $$('.application-edit input, .application-edit select, .application-edit button', appsList()).forEach(function (element) {
           element.disabled = membershipAppsState.publishing;
         });
         updateAdminTabLocks();
@@ -1215,28 +1227,48 @@
       }
 
       function applicationListState(title, message, retry) {
-        const list = $('#membershipAppsList');
+        const list = appsList();
         clearContent(list);
         const empty = node('div', 'empty-state');
         const symbol = node('div', 'state-icon');
         symbol.append(icon(retry ? 'search' : 'file'));
         empty.append(symbol, node('h3', '', title), node('p', '', message));
         if (retry) empty.append(actionButton('Try again', 'btn btn-primary btn-small', 'refresh', loadMembershipApplications));
-        else if (membershipAppsState.filter) empty.append(actionButton('View all applications', 'btn btn-outline btn-small', 'arrow', function () {
+        else if (membershipAppsState.view === 'applications' && membershipAppsState.filter) empty.append(actionButton('View all applications', 'btn btn-outline btn-small', 'arrow', function () {
           $('#membershipStatusFilter').value = '';
           loadMembershipApplications();
         }));
         list.append(empty);
       }
 
+      function renderMembershipRows() {
+        const isMembers = membershipAppsState.view === 'members';
+        const filter = membershipAppsState.filter;
+        const search = isMembers ? $('#membersSearch').value.trim().toLowerCase() : '';
+        const rows = membershipAppsState.rows.filter(function (application) {
+          if (!search) return true;
+          return ['organization_name', 'membership_no', 'receipt_no', 'mobile', 'email', 'rep1_name', 'rep2_name', 'membership_category', 'gst_no', 'pan_tan_no']
+            .some(function (key) { return String(application[key] || '').toLowerCase().indexOf(search) !== -1; });
+        });
+        const list = appsList();
+        clearContent(list);
+        const noun = isMembers ? ['member', 'members'] : ['application', 'applications'];
+        appsCount().textContent = rows.length + ' ' + (rows.length === 1 ? noun[0] : noun[1]) + (search ? ' | matching search' : isMembers ? ' | Newest first' : filter ? ' | ' + filter : ' | Newest first');
+        if (!rows.length) {
+          if (isMembers) applicationListState(search ? 'No members match your search.' : 'No members yet.', search ? 'Try a different name, number or mobile.' : 'When you set an application to Approved and click Save & Publish, it moves here.', false);
+          else applicationListState(filter ? 'No ' + filter.toLowerCase() + ' applications.' : 'No pending applications.', filter ? 'Choose another status or view all applications.' : 'New applications will appear here. Approved ones move to the Members tab.', false);
+        } else rows.forEach(function (application) { list.append(membershipApplicationCard(application)); });
+      }
+
       async function loadMembershipApplications() {
         const version = ++membershipAppsState.requestVersion;
-        const filter = $('#membershipStatusFilter').value;
+        const isMembers = membershipAppsState.view === 'members';
+        const filter = isMembers ? '' : $('#membershipStatusFilter').value;
         membershipAppsState.filter = filter;
         membershipAppsState.loading = true;
         membershipAppsState.notes.forEach(function (note) { note.view = null; });
-        loadingState($('#membershipAppsList'), 'Loading membership applications...');
-        $('#membershipAppsCount').textContent = '';
+        loadingState(appsList(), isMembers ? 'Loading members...' : 'Loading membership applications...');
+        appsCount().textContent = '';
         updateMembershipControlLocks();
         try {
           await Promise.all(Array.from(membershipAppsState.notes.keys()).map(saveOfficeNotes));
@@ -1247,7 +1279,9 @@
             let query = supabaseClient.from('membership_applications').select('*')
               .order('created_at', { ascending: false }).order('id', { ascending: false })
               .range(offset, offset + pageSize - 1);
-            if (filter) query = query.eq('status', filter);
+            if (isMembers) query = query.eq('status', 'Approved');
+            else if (filter) query = query.eq('status', filter);
+            else query = query.neq('status', 'Approved');
             const result = await query;
             if (version !== membershipAppsState.requestVersion) return;
             if (result.error) throw result.error;
@@ -1255,19 +1289,15 @@
             if (result.data.length < pageSize) break;
           }
           membershipAppsState.rows = applications;
-          clearContent($('#membershipAppsList'));
-          $('#membershipAppsCount').textContent = applications.length + (applications.length === 1 ? ' application' : ' applications') + (filter ? ' | ' + filter : ' | Newest first');
-          if (!applications.length) {
-            applicationListState(filter ? 'No ' + filter.toLowerCase() + ' applications.' : 'No membership applications yet.', filter ? 'Choose another status or view all applications.' : 'Submitted membership applications will appear here when they are received.', false);
-          } else applications.forEach(function (application) { $('#membershipAppsList').append(membershipApplicationCard(application)); });
+          renderMembershipRows();
         } catch (error) {
           if (version !== membershipAppsState.requestVersion) return;
-          $('#membershipAppsCount').textContent = 'Applications could not be loaded.';
-          applicationListState('Unable to load applications.', error.message || 'Please check your connection and try again.', true);
+          appsCount().textContent = isMembers ? 'Members could not be loaded.' : 'Applications could not be loaded.';
+          applicationListState(isMembers ? 'Unable to load members.' : 'Unable to load applications.', error.message || 'Please check your connection and try again.', true);
         } finally {
           if (version === membershipAppsState.requestVersion) {
             membershipAppsState.loading = false;
-            $('#membershipAppsList').removeAttribute('aria-busy');
+            appsList().removeAttribute('aria-busy');
             updateMembershipControlLocks();
           }
         }
@@ -1290,6 +1320,10 @@
         card.append(heading);
 
         const facts = node('dl', 'application-facts');
+        if (membershipAppsState.view === 'members') {
+          applicationFact(facts, 'Membership No.', application.membership_no);
+          applicationFact(facts, 'Receipt No.', application.receipt_no);
+        }
         applicationFact(facts, 'Mobile', application.mobile, 'phone');
         applicationFact(facts, 'Email', application.email, 'email');
         applicationFact(facts, 'Representative 1', [application.rep1_name, application.rep1_designation].filter(Boolean).join('\n'));
@@ -1388,7 +1422,12 @@
           if (result.error) throw result.error;
           if (!result.data || result.data.length !== 1) throw new Error('No application was updated. The record may no longer exist, or the database may have rejected the change.');
           membershipAppsState.drafts.delete(String(application.id));
-          window.alert('Membership application saved and published successfully.');
+          const wasMembers = membershipAppsState.view === 'members';
+          window.alert(!wasMembers && status === 'Approved'
+            ? 'Application approved and moved to the Members tab.'
+            : wasMembers && status !== 'Approved'
+              ? 'Status changed to ' + status + '. This record moved back to Membership Applications.'
+              : 'Membership details saved successfully.');
           await loadMembershipApplications();
         } catch (failure) {
           if (error.isConnected) { error.textContent = failure.message || 'The application could not be updated. Your changes have been kept.'; error.hidden = false; }
@@ -1740,6 +1779,10 @@
         });
         $('#membershipStatusFilter').addEventListener('change', loadMembershipApplications);
         $('#membershipAppsRefresh').addEventListener('click', loadMembershipApplications);
+        $('#membersRefresh').addEventListener('click', loadMembershipApplications);
+        $('#membersSearch').addEventListener('input', function () {
+          if (!membershipAppsState.loading && membershipAppsState.view === 'members') renderMembershipRows();
+        });
         $('#certificateStatusFilter').addEventListener('change', loadCertificateRequests);
         $('#certificateRequestsRefresh').addEventListener('click', loadCertificateRequests);
         $('#adminAdd').addEventListener('click', function () {
