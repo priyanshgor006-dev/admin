@@ -1,1127 +1,1840 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Membership &mdash; Chamber of Commerce Bhuj | Join Today</title>
-<meta name="description" content="Join the Chamber of Commerce Bhuj -- explore membership categories, fees, and apply online to become part of Kutch's business community." />
-<link rel="canonical" href="https://YOUR-DOMAIN-HERE.org/membership.html" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Membership &mdash; Chamber of Commerce Bhuj" />
-<meta property="og:description" content="Join the Chamber of Commerce Bhuj -- explore membership categories, fees, and apply online to become part of Kutch's business community." />
-<meta property="og:url" content="https://YOUR-DOMAIN-HERE.org/membership.html" />
-<meta property="og:image" content="https://res.cloudinary.com/c3josacx/image/upload/v1788577765/coc-bhuj-news/rf72yu5ypjxwy3wbxas9.jpg" />
-<meta property="og:site_name" content="Chamber of Commerce Bhuj" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Membership &mdash; Chamber of Commerce Bhuj" />
-<meta name="twitter:description" content="Join the Chamber of Commerce Bhuj -- explore membership categories, fees, and apply online to become part of Kutch's business community." />
-<meta name="twitter:image" content="https://res.cloudinary.com/c3josacx/image/upload/v1788577765/coc-bhuj-news/rf72yu5ypjxwy3wbxas9.jpg" />
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://upload-widget.cloudinary.com/global/all.js"></script>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b1f2a">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Content Administration | Chamber of Commerce Bhuj</title>
+  <link rel="preconnect" href="https://rvpiliwyqjowegmjcanr.supabase.co">
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    :root {
+      --navy: #6b1f2a;
+      --navy-dark: #4a1420;
+      --navy-light: #8c3341;
+      --gold: #d97706;
+      --gold-light: #f2a93c;
+      --gold-hover: #b45309;
+      --bg: #ffffff;
+      --bg-soft: #f8fafc;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --wine-tint: #f8f0f1;
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 125px; }
+    body { margin: 0; color: var(--text); background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    body.menu-open { overflow: hidden; }
+    button, input, select, textarea { font: inherit; }
+    button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+    button, a { touch-action: manipulation; }
+    button { cursor: pointer; }
+    button:disabled { cursor: wait; opacity: .6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { color: inherit; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { line-height: 1.2; }
+    h1, h2 { letter-spacing: -.035em; }
+    h3 { letter-spacing: -.015em; }
+    p { overflow-wrap: anywhere; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid var(--gold-light); outline-offset: 5px; }
+    ::selection { background: #f4d7b5; color: var(--navy-dark); }
+    .container { width: min(1240px, calc(100% - 112px)); margin-inline: auto; }
+    .icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; vertical-align: middle; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .skip-link { position: fixed; z-index: 200; top: 12px; left: 12px; padding: 12px 20px; background: white; color: var(--navy); transform: translateY(-150%); border-radius: 6px; }
+    .skip-link:focus { transform: translateY(0); }
+    .gradient-text { background: linear-gradient(135deg, var(--navy), var(--navy-light)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 13px 22px; min-height: 46px; font-size: 13px; font-weight: 650; line-height: 1.4; border: 1px solid transparent; border-radius: 6px; white-space: nowrap; transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease); }
+    .btn .icon { width: 17px; height: 17px; }
+    .btn-primary { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-hover) 100%); box-shadow: 0 4px 14px rgba(217,119,6,.35); color: white; overflow: hidden; }
+    .btn-primary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,.24) 50%, transparent 75%); transform: translateX(-120%); transition: transform .6s var(--ease); pointer-events: none; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 7px 21px rgba(217,119,6,.43); }
+    .btn-primary:hover::after { transform: translateX(120%); }
+    .btn-outline { background: transparent; color: var(--navy); border-color: #d8bec3; }
+    .btn-outline:hover { background: var(--wine-tint); border-color: var(--navy-light); transform: translateY(-2px); }
+    .btn-small { min-height: 38px; padding: 9px 15px; font-size: 12px; }
+    .btn-danger { background: white; color: #a63842; border-color: #efcdd2; }
+    .btn-danger:hover { background: #fdf0f2; border-color: #cf838c; }
+    .button-group { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
+    .icon-button { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; background: transparent; border: 1px solid var(--border); border-radius: 50%; transition: color .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease); }
+    .icon-button:hover { color: var(--navy); background: var(--wine-tint); border-color: #d8bec3; }
+    .icon-button .icon { width: 18px; height: 18px; }
+    .text-link { display: inline-flex; gap: 10px; align-items: center; color: var(--navy); font-size: 13px; font-weight: 650; white-space: nowrap; }
+    .text-link .icon { width: 18px; height: 18px; transition: transform .25s var(--ease); }
+    .text-link:hover .icon { transform: translateX(4px); }
+    .text-link:hover { color: var(--gold-hover); }
+    .badge { display: inline-block; width: fit-content; padding: 4px 9px; border-radius: 4px; background: #fbf0de; color: #99601e; font-size: 10px; font-weight: 600; line-height: 1.5; }
+    .card { border: 1px solid var(--border); border-radius: 13px; background: white; }
+    .photo-wrap { position: relative; overflow: hidden; background: #efe8e9; isolation: isolate; }
+    .photo-wrap img { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; }
+    .image-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #b99ba2; }
+    .image-fallback .icon { width: 42px; height: 42px; stroke-width: 1.25; }
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.98); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    .header-inner { min-height: 110px; display: flex; align-items: center; justify-content: space-between; gap: 30px; width: min(1376px, calc(100% - 72px)); margin: auto; }
+    .brand { display: flex; align-items: center; gap: 15px; flex-shrink: 0; }
+    .brand-name { display: block; font-size: 15px; font-weight: 650; line-height: 1.4; letter-spacing: -.025em; color: var(--navy-dark); }
+    .brand-name strong { display: block; font-size: 23px; font-weight: 700; line-height: 1.15; letter-spacing: -.045em; }
+    .brand-region { display: block; color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .19em; margin-top: 7px; }
+    .site-nav { display: flex; align-items: center; gap: 19px; }
+    .nav-link { position: relative; display: inline-flex; align-items: center; gap: 5px; padding: 16px 0; font-size: 12.5px; font-weight: 550; color: #4e5157; white-space: nowrap; transition: color .2s var(--ease); }
+    .nav-link::after { content: ""; position: absolute; left: 0; bottom: 7px; width: 0; height: 2px; border-radius: 1px; background: var(--gold); transition: width .25s var(--ease); }
+    .nav-link:hover, .nav-link.active { color: var(--navy); }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-admin { margin-left: 1px; color: var(--navy); }
+    .nav-admin .icon { width: 12px; height: 12px; }
+    .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--border); background: white; border-radius: 6px; align-items: center; justify-content: center; }
+    .menu-toggle .icon { width: 23px; height: 23px; }
+    .site-footer { color: #eadcdf; background: var(--navy-dark); }
+    .footer-main { display: grid; grid-template-columns: 1.5fr 1fr .6fr; gap: 65px; padding: 57px 0 42px; }
+    .footer-brand { font-size: 22px; font-weight: 550; line-height: 1.3; letter-spacing: -.03em; color: white; }
+    .footer-region { color: #b99ba4; font-size: 10px; letter-spacing: .17em; text-transform: uppercase; margin-top: 11px; }
+    .footer-tagline { font-size: 12px; color: #bda3ab; margin-top: 20px; }
+    .footer-heading { font-size: 10px; letter-spacing: .15em; font-weight: 600; text-transform: uppercase; color: #dcba8b; margin-bottom: 18px; }
+    .footer-links { display: grid; gap: 9px; font-size: 12px; color: #cdb6bd; }
+    .footer-links a:hover { color: #edbd7d; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255,255,255,.12); padding: 20px 0; font-size: 10px; color: #af939d; }
+    .back-top { display: inline-flex; gap: 9px; align-items: center; border: 0; background: none; padding: 0; color: #d0b5be; font-size: 10px; }
+    .back-top .icon { width: 13px; height: 13px; }
+    .toast { position: fixed; bottom: 25px; left: 50%; z-index: 120; display: flex; align-items: center; gap: 13px; width: max-content; max-width: calc(100% - 32px); padding: 14px 19px; border-radius: 8px; background: var(--navy-dark); color: white; box-shadow: 0 8px 30px rgba(50,15,26,.22); transform: translate(-50%, 25px); opacity: 0; visibility: hidden; transition: transform .25s var(--ease), opacity .25s var(--ease), visibility .25s var(--ease); font-size: 12px; }
+    .toast.visible { transform: translate(-50%, 0); opacity: 1; visibility: visible; }
+    .toast button { background: none; border: 0; padding: 0; color: #d2b8bf; }
+    .toast .icon { width: 16px; height: 16px; }
+    .search-wrap { position: relative; flex: 1; max-width: 495px; }
+    .search-wrap > .icon { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); width: 19px; height: 19px; color: #9b8c8f; pointer-events: none; }
+    .search-input { width: 100%; border: 1px solid #dddde2; padding: 13px 42px 13px 46px; border-radius: 7px; background: white; color: var(--text); font-size: 13px; outline: 0; transition: border-color .25s var(--ease), box-shadow .25s var(--ease); }
+    .search-input:focus { border-color: var(--navy-light); box-shadow: 0 0 0 3px rgba(107,31,42,.07); }
+    .search-input::placeholder { color: #96969d; }
+    .results-count { color: var(--muted); font-size: 12px; flex-shrink: 0; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    .field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { font-size: 12px; font-weight: 600; color: #5c4851; }
+    .field input:not([type="checkbox"]), .field select, .field textarea, .admin-select { width: 100%; border: 1px solid #dedbe0; border-radius: 6px; background: #fff; min-height: 45px; padding: 11px 13px; font-size: 13px; color: var(--text); outline: 0; transition: border-color .2s var(--ease), box-shadow .2s var(--ease); }
+    .field textarea { resize: vertical; min-height: 105px; line-height: 1.7; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--navy-light); box-shadow: 0 0 0 3px rgba(107,31,42,.06); }
+    .field input::placeholder, .field textarea::placeholder { color: #a6a1a7; font-size: 12px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 23px 20px; }
+    .form-error { font-size: 12px; line-height: 1.7; color: #a02c36; margin-top: 17px; }
+    .form-privacy { color: #949098; font-size: 10px; line-height: 1.7; margin-top: 15px; }
+    .empty-state { text-align: center; padding: 72px 24px; grid-column: 1 / -1; }
+    .state-icon { display: inline-flex; align-items: center; justify-content: center; width: 75px; height: 75px; color: var(--navy-light); background: var(--wine-tint); border-radius: 50%; margin-bottom: 25px; }
+    .state-icon .icon { width: 32px; height: 32px; stroke-width: 1.4; }
+    .empty-state h2, .empty-state h3 { font-size: 23px; font-weight: 600; color: var(--navy); line-height: 1.35; }
+    .empty-state p { color: var(--muted); font-size: 14px; max-width: 465px; margin: 13px auto 0; }
+    .empty-state .btn { margin-top: 26px; }
+    .loading-state { text-align: center; padding: 72px 24px; }
+    .loading-state p { color: var(--muted); font-size: 14px; max-width: 465px; margin: 13px auto 0; }
+    .loading-line { height: 2px; width: 90px; margin: 0 auto 17px; background: #efe4e7; overflow: hidden; }
+    .loading-line::after { content: ""; display: block; width: 40%; height: 100%; background: var(--navy-light); animation: load-line 1s var(--ease) 4; }
+    @keyframes load-line { from { transform: translateX(-100%); } to { transform: translateX(350%); } }
+    .admin-page { background: var(--bg-soft); min-height: 100svh; }
+    .auth-gate {
+      position: fixed; inset: 0; z-index: 500; display: flex; align-items: center; justify-content: center;
+      padding: 24px; background: radial-gradient(ellipse at 20% 15%, rgba(217,119,6,.18), transparent 55%),
+      radial-gradient(ellipse at 85% 85%, rgba(140,51,65,.35), transparent 60%), linear-gradient(135deg, var(--navy), var(--navy-dark));
+    }
+    body.auth-locked > *:not(.auth-gate) { visibility: hidden; }
+    .auth-card { width: min(420px, 100%); padding: clamp(28px, 5vw, 44px); background: #fff; }
+    .auth-card h1 { font-size: 26px; }
+    .auth-card .admin-subtitle { margin-top: 6px; margin-bottom: 26px; }
+    .auth-card .field { display: flex; flex-direction: column; gap: 8px; }
+    .admin-header { background: white; border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .admin-header .container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .admin-header .brand-name { font-size: 15px; }
+    .admin-header .brand-region { font-size: 9px; }
+    .admin-workspace { padding: 45px 0 70px; }
+    .admin-workspace h1 { font-size: 31px; }
+    .admin-workspace .toolbar { margin-top: 28px; }
+    .admin-subtitle { font-size: 12px; color: var(--muted); margin-top: 10px; }
+    .admin-select { width: auto; min-width: 215px; }
+    .admin-layout { display: grid; grid-template-columns: 315px minmax(0, 1fr); gap: 24px; align-items: start; }
+    .record-list { border: 1px solid var(--border); background: white; border-radius: 10px; max-height: 740px; overflow-y: auto; padding: 7px; }
+    .record-item { display: block; width: 100%; border: 1px solid transparent; border-radius: 6px; text-align: left; background: white; padding: 14px; }
+    .record-item + .record-item { margin-top: 4px; }
+    .record-item:hover { background: #fcf7f8; }
+    .record-item.active { border-color: #e4cbd1; background: #f8eef1; }
+    .record-item strong { display: block; font-size: 13px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+    .record-item span { display: block; font-size: 10px; color: var(--muted); margin-top: 6px; }
+    .editor-panel { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+    .editor-title { display: flex; justify-content: space-between; gap: 18px; align-items: center; margin-bottom: 26px; }
+    .editor-title h2 { font-size: 21px; color: var(--navy); }
+    .editor-title .badge { font-size: 9px; }
+    .editor-actions { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding-top: 25px; margin-top: 28px; border-top: 1px solid var(--border); }
+    .upload-row { display: flex; align-items: center; gap: 9px; }
+    .upload-row input { min-width: 0; }
+    .upload-row .btn { flex-shrink: 0; }
+    .upload-preview { width: 85px; height: 70px; border-radius: 5px; margin-top: 5px; }
+    .pdf-preview { margin-top: 5px; }
+    .pdf-preview-link { display: inline-flex; align-items: center; gap: 7px; padding: 8px 13px; background: var(--wine-tint); color: var(--navy); border-radius: 7px; font-size: .82rem; font-weight: 650; }
+    .pdf-preview-link .icon { width: 16px; height: 16px; }
+    .checkbox-row { flex-direction: row; align-items: center; gap: 10px; }
+    .checkbox-row input { accent-color: var(--navy); width: 16px; height: 16px; }
+    .admin-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .admin-notice { font-size: 10px; color: #918792; margin-top: 20px; }
+    .admin-tabs { display: flex; gap: 25px; overflow-x: auto; border-bottom: 1px solid var(--border); margin: 28px 0 30px; padding: 0 2px 6px; scrollbar-width: thin; }
+    .admin-tab-button { flex-shrink: 0; border: 0; background: transparent; border-radius: 0; font-size: 13px; padding: 14px 1px; }
+    .admin-tabs .admin-tab-button::after { bottom: 0; }
+    .admin-tab-panel { min-width: 0; }
+    .admin-collection-title { color: var(--navy); font-size: 23px; font-weight: 600; }
+    .application-toolbar { display: flex; justify-content: space-between; align-items: end; gap: 25px; margin-bottom: 28px; }
+    .application-toolbar h2 { font-size: 27px; font-weight: 600; }
+    .application-toolbar p { color: var(--muted); font-size: 13px; margin-top: 10px; max-width: 490px; }
+    .application-filter { display: flex; align-items: end; gap: 12px; flex-shrink: 0; }
+    .application-filter .field { min-width: 165px; }
+    .application-filter .icon-button { margin-bottom: 3px; }
+    .application-count { margin-bottom: 19px; }
+    .application-list { display: grid; gap: 25px; }
+    .application-card { padding: 29px; min-width: 0; }
+    .application-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+    .application-heading h3 { color: var(--navy-dark); font-size: 23px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+    .application-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 19px; margin-top: 9px; font-size: 12px; color: var(--muted); }
+    .application-meta strong { font-weight: 600; color: var(--navy-light); }
+    .application-status { display: inline-flex; gap: 7px; align-items: center; flex-shrink: 0; font-size: 11px; padding: 6px 11px; }
+    .application-status::before { content: ""; width: 5px; height: 5px; background: currentColor; border-radius: 50%; }
+    .application-status-pending { color: var(--gold-hover); background: #fff0d8; }
+    .application-status-approved { color: #327352; background: #e9f3ed; }
+    .application-status-rejected { color: #a63842; background: #fdf0f2; }
+    .application-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin: 27px 0 0; }
+    .application-facts dt { color: var(--muted); font-size: 11px; margin-bottom: 5px; }
+    .application-facts dd { margin: 0; font-size: 13px; color: var(--text); white-space: pre-line; overflow-wrap: anywhere; }
+    .application-facts a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+    .application-facts a:hover { color: var(--gold-hover); }
+    .application-details { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border); }
+    .application-details > summary { color: var(--navy); font-size: 13px; font-weight: 600; cursor: pointer; width: fit-content; padding: 5px 0; }
+    .application-details > summary::marker { color: var(--gold); }
+    .application-details .application-facts { margin-top: 20px; margin-bottom: 7px; }
+    .application-fact-wide { grid-column: 1 / -1; }
+    .application-documents { margin-top: 25px; }
+    .application-documents h4 { font-size: 12px; font-weight: 600; color: var(--navy); margin: 0 0 12px; }
+    .application-document-links { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+    .application-document-links a, .application-document-links button { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--navy); text-decoration: underline; text-underline-offset: 4px; border: 0; background: none; padding: 0; cursor: pointer; font-family: inherit; }
+    .application-document-links a:hover, .application-document-links button:hover { color: var(--gold-hover); }
+    .application-document-links .icon { width: 14px; height: 14px; }
 
-:root {
-  --navy: #6b1f2a; --navy-dark: #4a1420; --navy-light: #8c3341;
-  --gold: #d97706; --gold-light: #f2a93c; --gold-hover: #b45309;
-  --bg: #ffffff; --bg-soft: #f8fafc; --text: #1f2937;
-  --muted: #6b7280; --border: #e5e7eb; --wine-tint: #f8f0f1;
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0; padding: 0; background: var(--bg); color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6; -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
-button { font: inherit; cursor: pointer; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.gradient-text {
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-}
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 10px; font-size: 10.5px; font-weight: 700;
-  letter-spacing: .16em; text-transform: uppercase; color: var(--navy-light);
-}
-.eyebrow::before { content: ""; height: 1px; width: 24px; background: var(--gold); flex-shrink: 0; }
-
-/* ===== Header ===== */
-.site-header {
-  background: rgba(255,255,255,.98); border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 50; transition: box-shadow .25s var(--ease);
-}
-.site-header.scrolled { box-shadow: 0 2px 14px rgba(0,0,0,.06); }
-.header-inner {
-  max-width: 1240px; margin: 0 auto; padding: 6px 20px;
-  display: flex; align-items: center; justify-content: space-between; gap: 20px; position: relative;
-}
-.logo { display: flex; align-items: center; gap: 12px; font-weight: 700; }
-.logo-mark { width: 84px; height: 84px; object-fit: contain; flex-shrink: 0; display: none; opacity: 0; transition: opacity .5s var(--ease); }
-.logo-mark.loaded { display: block; opacity: 1; }
-.logo-text { line-height: 1.2; font-size: 1.15rem; color: var(--navy-dark); }
-.logo-sub { display: block; font-size: 9px; font-weight: 500; color: var(--muted); letter-spacing: .16em; text-transform: uppercase; margin-top: 5px; }
-@media (max-width: 480px) {
-  .header-inner { padding: 6px 16px; }
-  .logo-mark { width: 56px; height: 56px; }
-  .logo-text { font-size: .95rem; }
-  .logo-sub { display: none; }
-}
-
-.nav-menu ul { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
-.nav-menu a {
-  position: relative; display: inline-block; padding: 16px 0; font-size: 12.5px; font-weight: 550;
-  color: #4e5157; white-space: nowrap; transition: color .2s var(--ease);
-}
-.nav-menu a::after {
-  content: ""; position: absolute; left: 0; bottom: 8px; width: 0; height: 2px;
-  border-radius: 1px; background: var(--gold); transition: width .25s var(--ease);
-}
-.nav-menu a:hover, .nav-menu a.active { color: var(--navy); }
-.nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
-
-.nav-toggle {
-  display: none; background: transparent; border: 1px solid var(--border); border-radius: 6px;
-  width: 42px; height: 42px; cursor: pointer; padding: 0; position: relative; flex-shrink: 0;
-}
-.nav-toggle span {
-  position: absolute; left: 11px; right: 11px; height: 2px; background: var(--navy);
-  border-radius: 2px; transition: transform .2s var(--ease), top .2s var(--ease), opacity .2s var(--ease);
-}
-.nav-toggle span:nth-child(1) { top: 13px; }
-.nav-toggle span:nth-child(2) { top: 20px; }
-.nav-toggle span:nth-child(3) { top: 27px; }
-.nav-toggle.open span:nth-child(1) { top: 20px; transform: rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { top: 20px; transform: rotate(-45deg); }
-@media (max-width: 1080px) {
-  .nav-toggle { display: block; }
-  .nav-menu {
-    display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff;
-    border-bottom: 1px solid var(--border); padding: 10px 20px 20px;
-    box-shadow: 0 12px 26px rgba(35,14,22,.09);
-  }
-  .nav-menu.open { display: block; }
-  .nav-menu ul { flex-direction: column; gap: 2px; }
-  .nav-menu a { display: block; padding: 13px 0; font-size: 14px; }
-  .nav-menu a::after { bottom: 7px; }
-}
-
-/* ===== Buttons ===== */
-.btn {
-  position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center;
-  gap: 10px; padding: 13px 24px; min-height: 46px; border-radius: 8px; font-size: 13.5px; font-weight: 650;
-  border: 1px solid transparent; transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease), border-color .25s var(--ease);
-  white-space: nowrap;
-}
-.btn-primary {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-hover) 100%); color: #fff;
-  box-shadow: 0 4px 14px rgba(217,119,6,.35);
-}
-.btn-primary::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,.28) 50%, transparent 75%);
-  transform: translateX(-120%); transition: transform .6s var(--ease); pointer-events: none;
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 7px 20px rgba(217,119,6,.43); }
-.btn-primary:hover::after { transform: translateX(120%); }
-.btn-outline { background: transparent; color: var(--navy); border-color: #d8bec3; }
-.btn-outline:hover { background: var(--wine-tint); border-color: var(--navy-light); transform: translateY(-2px); }
-.btn-small { min-height: 38px; padding: 9px 16px; font-size: 12px; }
-.btn:disabled { opacity: .6; cursor: not-allowed; transform: none !important; }
-
-/* ===== Reveal animation ===== */
-.reveal { opacity: 0; transform: translateX(-40px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.reveal.reveal-right { transform: translateX(40px); }
-.reveal.reveal-visible { opacity: 1; transform: translateX(0); }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-
-/* ===== Page header ===== */
-.page-hero {
-  position: relative; overflow: hidden; padding: 52px 0 54px;
-  background: radial-gradient(ellipse at 100% 0%, rgba(217,119,6,.07), transparent 48%),
-              radial-gradient(ellipse at 0% 100%, rgba(107,31,42,.06), transparent 55%), #fcf9f8;
-  border-bottom: 1px solid var(--border);
-}
-.page-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 700; margin: 0 0 10px; letter-spacing: -.02em; }
-.page-hero p { color: var(--muted); margin: 0; max-width: 620px; font-size: 15px; }
-.breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 10px; color: #8f7e81; letter-spacing: .02em; }
-.breadcrumb a { transition: color .15s var(--ease); }
-.breadcrumb a:hover { color: var(--navy); }
-.breadcrumb svg { width: 11px; height: 11px; }
-
-/* ===== Section basics ===== */
-.section { padding: 60px 0; }
-.section-soft { background: var(--bg-soft); }
-.section-heading { margin-bottom: 26px; }
-.section-heading h2 { font-size: clamp(1.4rem, 2.4vw, 1.7rem); font-weight: 700; margin: 0 0 8px; }
-.section-heading p { color: var(--muted); margin: 0; max-width: 640px; font-size: .95rem; }
-
-/* ===== Icons ===== */
-.icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; vertical-align: middle; }
-.state-icon {
-  display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px;
-  color: var(--navy-light); background: var(--wine-tint); border-radius: 50%; margin-bottom: 20px;
-}
-.state-icon .icon { width: 26px; height: 26px; }
-
-/* ===== Membership category table ===== */
-.category-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 13px; background: #fff; }
-.category-table { width: 100%; border-collapse: collapse; font-size: .84rem; min-width: 720px; }
-.category-table th, .category-table td { padding: 11px 15px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
-.category-table th {
-  background: var(--wine-tint); color: var(--navy); font-weight: 700; font-size: .72rem;
-  text-transform: uppercase; letter-spacing: .04em;
-}
-.category-table tr:last-child td { border-bottom: none; }
-.category-table tbody tr:hover td { background: var(--bg-soft); }
-.foundation-note {
-  margin-top: 18px; padding: 16px 20px; background: var(--wine-tint); border-radius: 10px;
-  border-left: 3px solid var(--gold);
-}
-.foundation-note strong { color: var(--navy); display: block; margin-bottom: 6px; font-size: .9rem; }
-.foundation-note ul { margin: 0; padding-left: 18px; font-size: .84rem; color: var(--text); line-height: 1.8; }
-
-/* ===== Application form ===== */
-.form-shell { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-.form-panel { border: 1px solid var(--border); border-radius: 14px; padding: 32px; background: #fff; }
-.form-panel h2 { font-size: 1.3rem; font-weight: 700; margin: 0 0 6px; }
-.form-intro { color: var(--muted); font-size: .85rem; margin-bottom: 10px; }
-.form-status { padding: 10px 13px; border-radius: 8px; font-size: .88rem; margin-bottom: 16px; border: 1px solid transparent; display: none; }
-.form-status.visible { display: block; }
-.form-status.success { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
-.form-status.error { background: #fef2f2; color: #a63842; border-color: #fecaca; }
-
-.form-section-title {
-  font-size: .98rem; font-weight: 700; color: var(--navy); margin: 30px 0 16px;
-  padding-top: 22px; border-top: 1px solid var(--border);
-}
-.form-section-title:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
-.field-wide { grid-column: 1 / -1; }
-.form-row label { display: block; font-size: .85rem; font-weight: 650; margin-bottom: 6px; color: var(--text); }
-.form-row .req { color: #a63842; margin-left: 2px; }
-.form-row .optional-tag { color: var(--muted); font-weight: 400; font-size: .78rem; }
-.form-row input, .form-row select, .form-row textarea {
-  width: 100%; padding: 10px 13px; font-size: .93rem; font-family: inherit;
-  background: #fff; border: 1px solid var(--border); border-radius: 8px; outline: none; color: var(--text);
-  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
-}
-.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
-  border-color: var(--navy-light); box-shadow: 0 0 0 3px rgba(107,31,42,.08);
-}
-.form-row textarea { min-height: 80px; resize: vertical; }
-
-.fee-preview {
-  margin-top: 12px; padding: 14px 16px; background: var(--wine-tint); border-radius: 10px;
-  font-size: .86rem; color: var(--navy-dark); display: none; border-left: 3px solid var(--navy-light);
-}
-.fee-preview.visible { display: block; }
-.fee-preview strong { color: var(--navy); }
-.fee-preview .fee-row { display: flex; justify-content: space-between; margin-top: 4px; }
-
-/* ===== Document uploads ===== */
-.upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-@media (max-width: 640px) { .upload-grid { grid-template-columns: 1fr; } }
-.upload-slot { border: 1px dashed var(--border); border-radius: 11px; padding: 14px 16px; transition: all .2s var(--ease); }
-.upload-slot.uploaded { border-style: solid; border-color: #a7d7b8; background: #f3faf5; }
-.upload-slot-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.upload-slot-label { font-size: .85rem; font-weight: 650; }
-.upload-slot-status { font-size: .76rem; color: var(--muted); margin-top: 4px; }
-.upload-slot.uploaded .upload-slot-status { color: #047857; font-weight: 600; }
-.upload-btn-small {
-  padding: 7px 14px; font-size: .76rem; border-radius: 7px; background: #fff;
-  border: 1px solid var(--border); color: var(--navy); font-weight: 650; flex-shrink: 0;
-}
-.upload-btn-small:hover { background: var(--wine-tint); border-color: var(--navy-light); }
-.upload-remove-small {
-  padding: 7px 10px; font-size: .76rem; border-radius: 7px; background: transparent;
-  border: 1px solid transparent; color: #a63842; font-weight: 650; margin-left: 6px; flex-shrink: 0;
-}
-.upload-remove-small:hover { background: #fef2f2; }
-.upload-hint { font-size: .78rem; color: var(--muted); margin-bottom: 16px; }
-
-/* ===== Bank details ===== */
-.bank-details-card { background: var(--wine-tint); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; margin-bottom: 18px; }
-.bank-details-card dl { display: grid; grid-template-columns: auto 1fr; gap: 7px 18px; margin: 0; font-size: .88rem; }
-.bank-details-card dt { font-weight: 650; color: var(--navy-dark); }
-.bank-details-card dd { margin: 0; color: var(--text); }
-.bank-note { font-size: .84rem; color: var(--navy-dark); background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
-
-.declaration-row {
-  display: flex; gap: 10px; align-items: flex-start; margin: 24px 0 6px;
-  font-size: .85rem; color: var(--text); line-height: 1.6;
-}
-.declaration-row input { margin-top: 3px; flex-shrink: 0; width: 16px; height: 16px; accent-color: var(--navy); }
-
-.confirmation { text-align: center; padding: 30px 0; }
-
-/* ===== Footer ===== */
-.site-footer { background: var(--navy-dark); color: rgba(255,255,255,.85); padding: 34px 20px; text-align: center; font-size: .88rem; }
-.site-footer p { margin: 0; }
-.site-footer .footer-brand { font-weight: 650; color: #fff; margin-bottom: 4px; }
-.site-footer .contact { opacity: .7; margin-top: 10px; font-size: .82rem; }
-
-/* ===== Printable application copy ===== */
-#printSheet { display: none; }
-.copy-box { background: var(--wine-tint); border: 1px solid #ead9dc; border-radius: 12px; padding: 18px 20px; margin: 0 auto 22px; max-width: 520px; text-align: left; }
-.copy-box h3 { margin: 0 0 6px; font-size: 1rem; color: var(--navy); }
-.copy-box p { margin: 0 0 14px; font-size: .88rem; color: var(--muted); line-height: 1.55; }
-.copy-box ol { margin: 0 0 14px; padding-left: 18px; font-size: .88rem; color: var(--text); line-height: 1.6; }
-.copy-note { font-size: .78rem; color: var(--muted); margin-top: 8px; }
-@media print {
-  @page { size: A4; margin: 14mm; }
-  body > *:not(#printSheet) { display: none !important; }
-  #printSheet { display: block !important; color: #000; font-family: -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans Gujarati", sans-serif; font-size: 11pt; line-height: 1.45; }
-  #printSheet .ps-head { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid #6b1f2a; padding-bottom: 8px; margin-bottom: 10px; }
-  #printSheet .ps-head img { width: 54px; height: 54px; object-fit: contain; }
-  #printSheet h1 { font-size: 16pt; margin: 0; color: #4a1420; }
-  #printSheet .ps-sub { font-size: 9.5pt; color: #444; }
-  #printSheet h2 { font-size: 11.5pt; margin: 14px 0 6px; padding: 3px 8px; background: #f3e9ea; color: #4a1420; break-after: avoid; }
-  #printSheet table { width: 100%; border-collapse: collapse; }
-  #printSheet td { border: 1px solid #bbb; padding: 4px 7px; vertical-align: top; font-size: 10pt; }
-  #printSheet td.k { width: 36%; background: #f7f7f7; font-weight: 600; }
-  #printSheet tr { break-inside: avoid; }
-  #printSheet .ps-decl { margin-top: 12px; font-size: 9.5pt; }
-  #printSheet .ps-sign { display: flex; gap: 20px; margin-top: 46px; }
-  #printSheet .ps-sign div { flex: 1; border-top: 1px solid #000; padding-top: 4px; font-size: 9.5pt; text-align: center; }
-  #printSheet .ps-doc { break-before: page; }
-  #printSheet .ps-doc h2 { margin-top: 0; }
-  #printSheet .ps-doc img.ps-page { display: block; max-width: 100%; max-height: 235mm; margin: 6px auto 0; border: 1px solid #ccc; object-fit: contain; }
-  #printSheet .ps-doc .ps-warn { border: 1px dashed #888; padding: 10px; font-size: 10pt; }
-}
-</style>
+    .doc-modal-backdrop { position: fixed; inset: 0; background: rgba(30,12,18,.72); display: none; align-items: center; justify-content: center; z-index: 400; padding: 20px; }
+    .doc-modal-backdrop.open { display: flex; }
+    .doc-modal-wrap { position: relative; max-width: 900px; width: 100%; max-height: 92vh; }
+    .doc-modal { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.25); display: flex; flex-direction: column; max-height: 92vh; }
+    .doc-modal-body { flex: 1; min-height: 0; background: #2a2226; display: flex; align-items: center; justify-content: center; }
+    .doc-modal-body img { max-width: 100%; max-height: 82vh; object-fit: contain; }
+    .doc-modal-body iframe { width: 100%; height: 78vh; border: 0; background: #fff; }
+    .doc-modal-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 18px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+    .doc-modal-close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; border: none; cursor: pointer; font-size: 1.2rem; z-index: 1; }
+    .application-edit { display: grid; grid-template-columns: .9fr 1fr 1fr auto; gap: 18px; align-items: end; padding-top: 25px; margin-top: 25px; border-top: 1px solid var(--border); }
+    .application-edit .btn { min-height: 45px; }
+    .application-edit .form-error { grid-column: 1 / -1; margin: 0; }
+    .application-notes { margin-top: 24px; }
+    .application-notes textarea { min-height: 86px; }
+    .application-note-feedback { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .application-note-status { color: var(--muted); font-size: 11px; }
+    .application-note-status.is-error { color: #a63842; }
+    .application-note-status.is-saved { color: #327352; }
+    .application-retry { color: var(--navy); font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 1200px) {
+      .header-inner { width: calc(100% - 48px); gap: 20px; }
+      .site-nav { gap: 13px; }
+      .nav-link { font-size: 11.5px; }
+      .brand { gap: 10px; }
+      .brand-name { font-size: 13px; }
+      .brand-name strong { font-size: 21px; }
+      .container { width: calc(100% - 80px); }
+    }
+    @media (max-width: 1080px) {
+      .header-inner { min-height: 100px; }
+      .menu-toggle { display: flex; }
+      .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 20px 36px 28px; max-height: calc(100svh - 100px); overflow-y: auto; background: white; box-shadow: 0 12px 22px rgba(35,14,22,.09); grid-template-columns: 1fr 1fr; gap: 4px 25px; border-top: 1px solid #f1ebed; }
+      .site-nav.open { display: grid; }
+      .nav-link { display: block; padding: 13px 0; font-size: 14px; }
+      .nav-link::after { bottom: 6px; }
+      .nav-admin { display: flex; }
+      .brand-name { font-size: 15px; }
+      .brand-name strong { font-size: 23px; }
+    }
+    @media (max-width: 800px) {
+      .container { width: calc(100% - 48px); }
+      .footer-main { grid-template-columns: 1.2fr 1fr; gap: 40px; }
+      .footer-main > div:last-child { display: none; }
+      .admin-layout { grid-template-columns: 245px minmax(0, 1fr); gap: 17px; }
+      .editor-panel { padding: 21px; }
+      .admin-layout .form-grid { grid-template-columns: 1fr; }
+      .upload-row { flex-wrap: wrap; }
+      .application-toolbar { flex-direction: column; align-items: stretch; gap: 20px; }
+      .application-filter { justify-content: flex-end; }
+      .application-edit { grid-template-columns: 1fr 1fr; }
+      .application-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .container { width: calc(100% - 40px); }
+      .header-inner { width: calc(100% - 32px); min-height: 92px; }
+      .footer-main { grid-template-columns: 1fr; gap: 31px; padding: 42px 0 31px; }
+      .footer-brand { font-size: 23px; }
+      .footer-tagline { margin-top: 15px; }
+      .footer-heading { margin-bottom: 14px; }
+      .footer-bottom { align-items: flex-start; gap: 20px; font-size: 9px; }
+      .back-top { white-space: nowrap; font-size: 9px; }
+      .admin-header { padding: 20px 0; }
+      .admin-header .brand-name { max-width: 165px; font-size: 13px; }
+      .admin-layout { grid-template-columns: 1fr; }
+      .record-list { max-height: 265px; }
+      .admin-workspace { padding-top: 32px; }
+      .admin-workspace .toolbar { gap: 13px; }
+      .admin-workspace .toolbar > .button-group { justify-content: space-between; }
+      .admin-select { min-width: 0; flex: 1; }
+      .admin-links { gap: 8px 15px; justify-content: flex-end; }
+      .admin-links .text-link { font-size: 11px; }
+      .editor-actions { flex-wrap: wrap; gap: 15px; }
+      .admin-tabs { gap: 21px; margin-top: 22px; }
+      .admin-tab-button { font-size: 12px; }
+      .application-toolbar h2 { font-size: 25px; }
+      .application-filter .field { flex: 1; }
+      .application-card { padding: 22px 18px; }
+      .application-heading { flex-direction: column; gap: 14px; }
+      .application-heading h3 { font-size: 21px; }
+      .application-facts, .application-edit { grid-template-columns: 1fr; gap: 18px; }
+      .application-edit .btn { justify-self: start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .btn-primary::after { display: none; }
+    }
+  </style>
 </head>
 <body>
-
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <img id="siteLogo" class="logo-mark" alt="Chamber of Commerce Bhuj" />
-      <span class="logo-text">Chamber of Commerce Bhuj<span class="logo-sub">Kutch &middot; Gujarat</span></span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav-menu" id="navMenu" aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="certificates.html">Certificates</a></li>
-        <li><a href="committee.html">Committee</a></li>
-        <li><a href="membership.html" class="active" aria-current="page">Membership</a></li>
-      </ul>
-    </nav>
+  <div class="auth-gate" id="authGate" hidden>
+    <div class="auth-card card">
+      <h1 class="gradient-text">Admin Sign In</h1>
+      <p class="admin-subtitle">Log in to manage the Chamber's content.</p>
+      <form id="authForm" novalidate>
+        <div class="field">
+          <label for="authEmail">Email</label>
+          <input id="authEmail" type="email" name="email" required autocomplete="username" />
+        </div>
+        <div class="field" style="margin-top:16px">
+          <label for="authPassword">Password</label>
+          <input id="authPassword" type="password" name="password" required autocomplete="current-password" />
+        </div>
+        <p class="form-error" id="authError" role="alert" hidden></p>
+        <button type="submit" class="btn btn-primary" id="authSubmit" style="margin-top:22px;width:100%">Sign in<svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></button>
+      </form>
+    </div>
   </div>
-</header>
-
-<main>
-  <section class="page-hero">
-    <div class="container reveal">
-      <span class="eyebrow">Join the Chamber</span>
-      <div class="breadcrumb reveal"><a href="index.html">Home</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg><span>Membership</span></div>
-      <h1 class="gradient-text">Membership</h1>
-      <p>Join the Bhuj Chamber of Commerce &amp; Industries and become part of a growing business community.</p>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V4m-7 7 7-7 7 7"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7h9v14M14 11h5v10M8 10h3m-3 4h3m-3 4h3M8 7V3h7v8m2 3v1m0 3v1"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7a9 9 0 0 0-15-2L3 7m0-5v5h5m-4 10a9 9 0 0 0 15 2l2-2m-5 0h5v5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/><circle cx="12" cy="12" r="10"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h5"/></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M3 16v5h18v-5"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+    </defs>
+  </svg>
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html#home" class="brand" aria-label="Chamber of Commerce Bhuj home">
+        <span><span class="brand-name">Chamber of Commerce<strong>Bhuj</strong></span><span class="brand-region">Kutch &#183; Gujarat</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+      <nav class="site-nav" id="siteNav" aria-label="Site sections">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#about">About Us</a>
+        <a class="nav-link" href="index.html#news">News</a>
+        <a class="nav-link" href="index.html#directory">Directory</a>
+        <a class="nav-link" href="index.html#gallery">Gallery</a>
+        <a class="nav-link" href="index.html#projects">Projects</a>
+        <a class="nav-link" href="index.html#events">Events</a>
+        <a class="nav-link" href="index.html#certificates">Certificates</a>
+        <a class="nav-link" href="index.html#committee">Committee</a>
+        <a class="nav-link" href="index.html#membership">Membership</a>
+        <a class="nav-link nav-admin active" href="admin.html" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg>Admin</a>
+      </nav>
     </div>
-  </section>
-
-  <!-- ===== Membership Categories ===== -->
-  <section class="section section-soft">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="eyebrow">Choose what fits your business</span>
-        <h2>Membership Categories &amp; Fees</h2>
-        <p>Review the fee structure below before applying. Your selected category in the form will automatically show the matching fees.</p>
+  </header>
+  <main id="mainContent" tabindex="-1">
+    <section class="admin-page" aria-label="Content administration">
+      <header class="admin-header">
+        <div class="container">
+          <a href="index.html#home"><span class="brand-name">Chamber of Commerce Bhuj</span><span class="brand-region">Content administration</span></a>
+          <nav class="admin-links" aria-label="Administration tools">
+            <a class="text-link" href="admin.html">Content manager</a>
+            <a class="text-link" href="#edit" id="recordEditorLink">Record editor</a>
+            <button type="button" class="text-link" id="authLogoutButton" style="border:0;background:none;padding:0;cursor:pointer">Sign out</button>
+            <a class="text-link" href="index.html#home">Back to site<svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></a>
+          </nav>
+        </div>
+      </header>
+      <div class="admin-workspace container" id="adminWorkspace">
+        <h1 class="gradient-text" tabindex="-1">Content Manager</h1>
+        <p class="admin-subtitle">Manage the Chamber's existing records directly. Your database structure and permissions stay unchanged.</p>
+        <div class="admin-tabs" id="adminTabs" role="tablist" aria-label="Admin collections">
+          <button type="button" class="nav-link admin-tab-button active" id="tab-adminNews" data-tab="adminNews" role="tab" aria-controls="adminNews" aria-selected="true">News</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-adminMembers" data-tab="adminMembers" role="tab" aria-controls="adminMembers" aria-selected="false" tabindex="-1">Members</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-adminGallery" data-tab="adminGallery" role="tab" aria-controls="adminGallery" aria-selected="false" tabindex="-1">Gallery</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-adminCommittee" data-tab="adminCommittee" role="tab" aria-controls="adminCommittee" aria-selected="false" tabindex="-1">Committee</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-adminProjects" data-tab="adminProjects" role="tab" aria-controls="adminProjects" aria-selected="false" tabindex="-1">Projects</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-adminMedia" data-tab="adminMedia" role="tab" aria-controls="adminMedia" aria-selected="false" tabindex="-1">Site Media</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-adminClippings" data-tab="adminClippings" role="tab" aria-controls="adminClippings" aria-selected="false" tabindex="-1">Newspaper Clippings</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-membershipApps" data-tab="membershipApps" role="tab" aria-controls="membershipApps" aria-selected="false" tabindex="-1">Membership Applications</button>
+          <button type="button" class="nav-link admin-tab-button" id="tab-certificateRequests" data-tab="certificateRequests" role="tab" aria-controls="certificateRequests" aria-selected="false" tabindex="-1">Certificate Requests</button>
+        </div>
+        <div id="adminNews" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminNews" tabindex="0">
+          <div id="collectionEditor">
+            <div class="toolbar">
+              <div class="button-group"><h2 class="admin-collection-title" id="adminCollectionTitle">News</h2><button class="icon-button" id="adminRefresh" aria-label="Refresh records"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg></button></div>
+              <button class="btn btn-primary btn-small" id="adminAdd"><svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>Add record</button>
+            </div>
+            <div class="admin-layout">
+              <div><div class="search-wrap" style="margin-bottom:15px"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg><input class="search-input" type="search" id="adminSearch" aria-label="Search records" placeholder="Find a record..."></div><div class="record-list" id="adminRecords" aria-live="polite"></div><p class="admin-notice">Changes use the supplied public API key and your existing database row-level security. Nothing on this screen changes those permissions.</p></div>
+              <section class="editor-panel" id="edit" aria-label="Record editor" tabindex="-1"><div id="adminEditor"></div></section>
+            </div>
+          </div>
+        </div>
+        <div id="adminMembers" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminMembers" tabindex="0" hidden></div>
+        <div id="adminGallery" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminGallery" tabindex="0" hidden></div>
+        <div id="adminCommittee" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminCommittee" tabindex="0" hidden></div>
+        <div id="adminProjects" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminProjects" tabindex="0" hidden></div>
+        <div id="adminMedia" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminMedia" tabindex="0" hidden></div>
+        <div id="adminClippings" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-adminClippings" tabindex="0" hidden></div>
+        <div id="membershipApps" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-membershipApps" tabindex="0" hidden>
+          <div class="application-toolbar">
+            <div><h2 class="gradient-text">Membership Applications</h2><p>Review applications, publish membership details, and keep office notes in one place.</p></div>
+            <div class="application-filter"><div class="field"><label for="membershipStatusFilter">Application status</label><select id="membershipStatusFilter"><option value="">All</option><option value="Pending">Pending</option><option value="Approved">Approved</option><option value="Rejected">Rejected</option></select></div><button type="button" class="icon-button" id="membershipAppsRefresh" aria-label="Refresh membership applications"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg></button></div>
+          </div>
+          <p class="results-count application-count" id="membershipAppsCount" role="status"></p>
+          <div class="application-list" id="membershipAppsList"></div>
+        </div>
+        <div id="certificateRequests" class="admin-tab-panel" role="tabpanel" aria-labelledby="tab-certificateRequests" tabindex="0" hidden>
+          <div class="application-toolbar">
+            <div><h2 class="gradient-text">Certificate Requests</h2><p>Review certificate requests submitted through the public site and update their status.</p></div>
+            <div class="application-filter"><div class="field"><label for="certificateStatusFilter">Request status</label><select id="certificateStatusFilter"><option value="">All</option><option value="Pending">Pending</option><option value="Issued">Issued</option><option value="Rejected">Rejected</option></select></div><button type="button" class="icon-button" id="certificateRequestsRefresh" aria-label="Refresh certificate requests"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg></button></div>
+          </div>
+          <p class="results-count application-count" id="certificateRequestsCount" role="status"></p>
+          <div class="application-list" id="certificateRequestsList"></div>
+        </div>
       </div>
-      <div class="category-table-wrap reveal">
-        <table class="category-table" id="categoryTable">
-          <thead>
-            <tr><th>Category</th><th>Eligibility</th><th>Admission Fee (&#8377;)</th><th>Annual Fee (&#8377;)</th><th>GST</th></tr>
-          </thead>
-          <tbody>
-            <tr data-cat="Startup / Small Trader Member" data-admission="2500" data-annual="2000"><td>Startup / Small Trader Member</td><td>Small traders, startups</td><td>2,500</td><td>2,000</td><td>Applicable</td></tr>
-            <tr data-cat="General Business Member" data-admission="4500" data-annual="2250"><td>General Business Member</td><td>Partnership / LLP / MSME</td><td>4,500</td><td>2,250</td><td>Applicable</td></tr>
-            <tr data-cat="Corporate Member – Small" data-admission="0" data-annual="6500"><td>Corporate Member &ndash; Small</td><td>Turnover upto &#8377;5 Crores</td><td>Waived</td><td>6,500</td><td>Applicable</td></tr>
-            <tr data-cat="Corporate Member – Medium" data-admission="0" data-annual="17500"><td>Corporate Member &ndash; Medium</td><td>&#8377;6&ndash;35 Crores</td><td>Waived</td><td>17,500</td><td>Applicable</td></tr>
-            <tr data-cat="Corporate Member – Large" data-admission="0" data-annual="30000"><td>Corporate Member &ndash; Large</td><td>&#8377;36&ndash;100 Crores</td><td>Waived</td><td>30,000</td><td>Applicable</td></tr>
-            <tr data-cat="Corporate Member – Premium" data-admission="17500" data-annual="65000"><td>Corporate Member &ndash; Premium</td><td>&#8377;101&ndash;250 Crores</td><td>17,500</td><td>65,000</td><td>Applicable</td></tr>
-            <tr data-cat="Corporate Member – Elite" data-admission="65000" data-annual="130000"><td>Corporate Member &ndash; Elite</td><td>&#8377;251&ndash;500 Crores</td><td>65,000</td><td>1,30,000</td><td>Applicable</td></tr>
-            <tr data-cat="Mega Industry Member" data-admission="110000" data-annual="185000"><td>Mega Industry Member</td><td>Above &#8377;500 Crores</td><td>1,10,000</td><td>1,85,000</td><td>Applicable</td></tr>
-            <tr data-cat="Association Member" data-admission="0" data-annual="9500"><td>Association Member</td><td>Trade Associations</td><td>Waived</td><td>9,500</td><td>Applicable</td></tr>
-            <tr data-cat="Institutional Member" data-admission="0" data-annual="6500"><td>Institutional Member</td><td>Institutions / NGOs</td><td>Waived</td><td>6,500</td><td>Applicable</td></tr>
-            <tr data-cat="Patron Member – Individual" data-admission="20000" data-annual="0"><td>Patron Member &ndash; Individual</td><td>Business Personalities</td><td>20,000</td><td>NIL</td><td>Applicable</td></tr>
-            <tr data-cat="Lifetime Member – Firm/Company" data-admission="60000" data-annual="0"><td>Lifetime Member &ndash; Firm/Company</td><td>Firms / Companies</td><td>60,000</td><td>NIL</td><td>Inclusive</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="foundation-note reveal">
-        <strong>Special Foundation Membership Scheme</strong>
-        <ul>
-          <li>Founding Member Certificate</li>
-          <li>Priority Networking Access</li>
-          <li>Admission Fee Waiver for MSMEs during initial period</li>
-          <li>Special Startup &amp; Youth Entrepreneur Promotion</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Application Form ===== -->
-  <section class="section">
-    <div class="form-shell">
-      <div class="form-panel reveal">
-        <h2>Membership Application Form</h2>
-        <p class="form-intro">Fields marked with an asterisk are required. Please have your documents ready before starting.</p>
-        <div class="form-status" id="formStatus" role="status"></div>
-
-        <form id="membershipForm" novalidate>
-
-          <div class="form-section-title">Organization Details</div>
-          <div class="form-grid">
-            <div class="form-row field-wide">
-              <label for="orgName">Name of Organization / Firm <span class="req">*</span></label>
-              <input id="orgName" type="text" required />
-            </div>
-            <div class="form-row">
-              <label for="orgType">Type of Organization <span class="req">*</span></label>
-              <select id="orgType" required>
-                <option value="">Select type</option>
-                <option>Proprietorship</option>
-                <option>Partnership</option>
-                <option>LLP</option>
-                <option>Private Limited Company</option>
-                <option>Public Limited Company</option>
-                <option>Trust / Society</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="orgEstYear">Year of Establishment</label>
-              <input id="orgEstYear" type="text" placeholder="e.g. 2015" />
-            </div>
-            <div class="form-row field-wide">
-              <label for="natureBusiness">Nature of Business <span class="req">*</span></label>
-              <input id="natureBusiness" type="text" required />
-            </div>
-            <div class="form-row field-wide">
-              <label for="businessDetails">Main Business / Activity Details</label>
-              <textarea id="businessDetails" rows="3"></textarea>
-            </div>
-          </div>
-
-          <div class="form-section-title">Registration &amp; Legal</div>
-          <div class="form-grid">
-            <div class="form-row">
-              <label for="cinNo">CIN / Registration No.</label>
-              <input id="cinNo" type="text" />
-            </div>
-            <div class="form-row">
-              <label for="gstNo">GST No.</label>
-              <input id="gstNo" type="text" />
-            </div>
-            <div class="form-row field-wide">
-              <label for="panNo">PAN / TAN / Other Registration No.</label>
-              <input id="panNo" type="text" />
-            </div>
-          </div>
-
-          <div class="form-section-title">Address &amp; Contact</div>
-          <div class="form-grid">
-            <div class="form-row field-wide">
-              <label for="regAddress">Registered / Head Office Address <span class="req">*</span></label>
-              <textarea id="regAddress" rows="2" required></textarea>
-            </div>
-            <div class="form-row field-wide">
-              <label for="branchAddress">Factory / Branch Office Address <span class="optional-tag">(optional)</span></label>
-              <textarea id="branchAddress" rows="2"></textarea>
-            </div>
-            <div class="form-row">
-              <label for="orgPhone">Phone</label>
-              <input id="orgPhone" type="tel" />
-            </div>
-            <div class="form-row">
-              <label for="orgMobile">Mobile <span class="req">*</span></label>
-              <input id="orgMobile" type="tel" required />
-            </div>
-            <div class="form-row">
-              <label for="orgEmail">E-mail <span class="req">*</span></label>
-              <input id="orgEmail" type="email" required />
-            </div>
-            <div class="form-row">
-              <label for="orgWebsite">Website <span class="optional-tag">(optional)</span></label>
-              <input id="orgWebsite" type="text" placeholder="www.example.com" />
-            </div>
-          </div>
-
-          <div class="form-section-title">Authorized Representative &ndash; 1</div>
-          <div class="form-grid">
-            <div class="form-row">
-              <label for="rep1Name">Name</label>
-              <input id="rep1Name" type="text" />
-            </div>
-            <div class="form-row">
-              <label for="rep1Designation">Designation</label>
-              <input id="rep1Designation" type="text" />
-            </div>
-            <div class="form-row">
-              <label for="rep1Mobile">Mobile</label>
-              <input id="rep1Mobile" type="tel" />
-            </div>
-            <div class="form-row">
-              <label for="rep1Email">E-mail</label>
-              <input id="rep1Email" type="email" />
-            </div>
-          </div>
-
-          <div class="form-section-title">Authorized Representative &ndash; 2 <span class="optional-tag">(optional)</span></div>
-          <div class="form-grid">
-            <div class="form-row">
-              <label for="rep2Name">Name</label>
-              <input id="rep2Name" type="text" />
-            </div>
-            <div class="form-row">
-              <label for="rep2Designation">Designation</label>
-              <input id="rep2Designation" type="text" />
-            </div>
-            <div class="form-row">
-              <label for="rep2Mobile">Mobile</label>
-              <input id="rep2Mobile" type="tel" />
-            </div>
-            <div class="form-row">
-              <label for="rep2Email">E-mail</label>
-              <input id="rep2Email" type="email" />
-            </div>
-          </div>
-
-          <div class="form-section-title">Business Scale</div>
-          <div class="form-grid">
-            <div class="form-row">
-              <label for="numEmployees">Number of Employees</label>
-              <input id="numEmployees" type="text" />
-            </div>
-            <div class="form-row">
-              <label for="annualTurnover">Annual Turnover</label>
-              <input id="annualTurnover" type="text" placeholder="e.g. &#8377;2 Crores" />
-            </div>
-          </div>
-
-          <div class="form-section-title">Membership Category</div>
-          <div class="form-grid">
-            <div class="form-row field-wide">
-              <label for="membershipCategory">Select Membership Category <span class="req">*</span></label>
-              <select id="membershipCategory" required>
-                <option value="">Select a category</option>
-              </select>
-              <div class="fee-preview" id="feePreview">
-                <div class="fee-row"><span>Admission Fee</span><strong id="feeAdmission">&#8377;0</strong></div>
-                <div class="fee-row"><span>Annual Fee</span><strong id="feeAnnual">&#8377;0</strong></div>
-                <div class="fee-row"><span>GST</span><strong id="feeGst">&mdash;</strong></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-section-title">Required Documents</div>
-          <p class="upload-hint">PDF, PNG, or JPG accepted. Upload clear, legible copies.</p>
-          <div class="upload-grid" id="uploadGrid">
-            <!-- upload slots injected by JS -->
-          </div>
-
-          <div class="form-section-title">Payment</div>
-          <div class="bank-details-card">
-            <dl>
-              <dt>Bank Name</dt><dd>Bandhan Bank</dd>
-              <dt>Account Name</dt><dd>M/S BHUJ CHAMBER OF COMMERCE &amp; INDUSTRIES FEDERATION</dd>
-              <dt>Account Number</dt><dd>20200151193650</dd>
-              <dt>Branch</dt><dd>Bhuj</dd>
-              <dt>IFSC Code</dt><dd>BDBL0001761</dd>
-              <dt>Branch Code</dt><dd>1761</dd>
-              <dt>Branch Address</dt><dd>MB Bhagat Complex, Lal Tekry, Bhuj-Kutch, Gujarat &ndash; 370001</dd>
-            </dl>
-          </div>
-          <p class="bank-note">Please mention your organization name and membership reference while making the payment, and upload your transaction receipt below.</p>
-          <div class="upload-grid" id="uploadGridPayment" style="margin-top:14px">
-            <!-- payment receipt upload slot injected by JS -->
-          </div>
-
-          <label class="declaration-row">
-            <input type="checkbox" id="declarationCheck" required />
-            <span>I / We hereby declare that the above information is true and correct and that I / We shall abide by the rules, decisions and regulations of the Bhuj Chamber of Commerce &amp; Industries.</span>
-          </label>
-
-          <button type="submit" class="btn btn-primary" style="margin-top:8px" id="submitBtn">Submit Application</button>
-        </form>
-
-        <div class="confirmation" id="confirmation" style="display:none">
-          <div class="state-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m5 12 4 4L19 6"/></svg></div>
-          <h2 class="gradient-text">Application received.</h2>
-          <p style="color:var(--muted);margin:12px 0 24px">Thank you for applying. The Chamber will review your application and documents, and get in touch regarding your membership.</p>
-          <div class="copy-box">
-            <h3>Next step: send a hard copy to the Chamber</h3>
-            <p>The Chamber also needs a printed copy by courier. We have prepared a copy of everything you filled in, with your uploaded documents attached.</p>
-            <ol>
-              <li>Click the button below.</li>
-              <li>Print it, or choose "Save as PDF" to keep a soft copy.</li>
-              <li>Sign and stamp it where marked, then courier it to the Chamber office.</li>
-            </ol>
-            <button type="button" class="btn btn-primary" id="printCopyBtn">Download / print my application copy</button>
-            <p class="copy-note" id="printCopyNote">Tip: in the print window, set Destination to "Save as PDF" to download it.</p>
-          </div>
-          <button type="button" class="btn btn-outline" id="resetForm">Submit another application</button>
+    </section>
+  </main>
+  <footer class="site-footer" id="siteFooter"><div class="container"><div class="footer-main"><div><a href="index.html#home" class="footer-brand">Chamber of Commerce<br>Bhuj</a><p class="footer-region">Kutch &#183; Gujarat &#183; India</p><p class="footer-tagline">Rooted in Kutch. Growing together.</p></div><div><h2 class="footer-heading">Let's stay connected</h2><a class="footer-contact" href="mailto:Infoatccifb@gmail.com" style="display:block;font-size:12px;color:#cdb6bd;margin-top:8px;">Infoatccifb@gmail.com</a></div><div><h2 class="footer-heading">Your Chamber</h2><div class="footer-links"><a href="index.html#about">About us</a><a href="index.html#committee">Our committee</a><a href="index.html#membership">Membership</a><a href="index.html#certificates">Certificates</a></div></div></div><div class="footer-bottom"><span>&#169; <span id="copyrightYear">2026</span> Chamber of Commerce Bhuj. All rights reserved.</span><button class="back-top" id="backToTop">Back to top<svg class="icon" aria-hidden="true"><use href="#i-up"></use></svg></button></div></div></footer>
+  <div class="doc-modal-backdrop" id="docModal" role="dialog" aria-modal="true">
+    <div class="doc-modal-wrap">
+      <button class="doc-modal-close" id="docModalClose" aria-label="Close">&times;</button>
+      <div class="doc-modal">
+        <div class="doc-modal-body" id="docModalBody"></div>
+        <div class="doc-modal-footer">
+          <span id="docModalLabel"></span>
+          <a href="#" id="docModalOpenNewTab" target="_blank" rel="noopener noreferrer" class="text-link">Open in new tab<svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></a>
         </div>
       </div>
     </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p class="footer-brand">Chamber of Commerce Bhuj</p>
-    <p>&copy; Chamber of Commerce Bhuj. All rights reserved.</p>
-    <p class="contact">Infoatccifb@gmail.com &middot; +91 2832 XXX XXX</p>
   </div>
-</footer>
+  <div class="toast" id="toast" role="status"><span id="toastMessage"></span><button id="toastClose" aria-label="Dismiss notification"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+  <noscript><div style="padding:20px;text-align:center;background:#fff3db;color:#6b1f2a">Please enable JavaScript to use the admin panel.</div></noscript>
+  <script>
+    (function () {
+      'use strict';
 
-<div id="printSheet" aria-hidden="true"></div>
+      const SUPABASE_URL = 'https://rvpiliwyqjowegmjcanr.supabase.co';
+      const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ2cGlsaXd5cWpvd2VnbWpjYW5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODczMDM2MjksImV4cCI6MjEwMjg3OTYyOX0.9ZQj69FLcFgqp8huYTqlWy4JGl-vYGmYZiiVUBo4Sio';
+      // Real Supabase Auth session -- separate from the hand-written REST
+      // client below. This is what lets admin.html prove to the database
+      // that a real logged-in person (not just anyone with the public key)
+      // is making the request, which is what the "authenticated"-only
+      // SELECT/UPDATE policies on membership_applications now check for.
+      const supabaseAuth = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      let currentSession = null;
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const $ = function (selector, root) { return (root || document).querySelector(selector); };
+      const $$ = function (selector, root) { return Array.from((root || document).querySelectorAll(selector)); };
+      const tableOrders = {
+        news_posts: [['published_at', false], ['created_at', false]],
+        directory_members: [['business_name', true]],
+        gallery_images: [['created_at', false]],
+        committee_members: [['sort_order', true]],
+        projects: [['created_at', false]],
+        site_media: [['sort_order', true]],
+        membership_applications: [['created_at', false]],
+        certificate_requests: [['created_at', false]],
+        newspaper_clippings: [['clipping_date', false], ['created_at', false]]
+      };
+      const state = {
+        cache: new Map(), pending: new Map(), toastTimer: null,
+        adminRows: [], adminTable: 'news_posts', adminTab: 'adminNews', editingId: null,
+        adminDirty: false, adminBusy: false, adminLoading: null
+      };
+      const adminTabCollections = {
+        adminNews: 'news_posts', adminMembers: 'directory_members', adminGallery: 'gallery_images',
+        adminCommittee: 'committee_members', adminProjects: 'projects', adminMedia: 'site_media',
+        adminClippings: 'newspaper_clippings'
+      };
+      const membershipAppsState = {
+        filter: '', rows: [], requestVersion: 0, loading: false, publishing: false,
+        drafts: new Map(), notes: new Map(), openDetails: new Set()
+      };
+      const membershipStatuses = ['Pending', 'Approved', 'Rejected'];
+      const membershipDocumentFields = [
+        ['doc_certificate_url', 'Certificate'], ['doc_pan_url', 'PAN'],
+        ['doc_registration_url', 'Registration'], ['doc_gst_url', 'GST'],
+        ['doc_address_proof_url', 'Address Proof'], ['doc_partnership_deed_url', 'Partnership Deed'],
+        ['doc_photo_url', 'Photo'], ['doc_payment_receipt_url', 'Payment Receipt']
+      ];
+      const certificateRequestsState = {
+        filter: '', rows: [], requestVersion: 0, loading: false, publishing: false, noteTimers: new Map()
+      };
+      const certificateStatuses = ['Pending', 'Issued', 'Rejected'];
 
-<script>
-/* ---------- Nav toggle + header scroll shadow ---------- */
-  (function () {
-    var toggle = document.getElementById("navToggle");
-    var menu = document.getElementById("navMenu");
-    toggle.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
-      toggle.classList.toggle("open", open);
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    menu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        menu.classList.remove("open");
-        toggle.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-    var header = document.getElementById("siteHeader");
-    function updateShadow() { header.classList.toggle("scrolled", window.scrollY > 4); }
-    window.addEventListener("scroll", updateShadow, { passive: true });
-    updateShadow();
-  })();
-
-/* ---------- Membership category dropdown + fee preview ---------- */
-  (function () {
-    var table = document.getElementById("categoryTable");
-    var select = document.getElementById("membershipCategory");
-    var preview = document.getElementById("feePreview");
-    var feeAdmission = document.getElementById("feeAdmission");
-    var feeAnnual = document.getElementById("feeAnnual");
-    var feeGst = document.getElementById("feeGst");
-
-    var rows = table.querySelectorAll("tbody tr");
-    rows.forEach(function (row) {
-      var opt = document.createElement("option");
-      opt.value = row.dataset.cat;
-      opt.textContent = row.dataset.cat;
-      select.appendChild(opt);
-    });
-
-    function formatFee(amount) {
-      var n = Number(amount);
-      if (!n) return "NIL / Waived";
-      return "\u20b9" + n.toLocaleString("en-IN");
-    }
-
-    select.addEventListener("change", function () {
-      var match = null;
-      rows.forEach(function (row) { if (row.dataset.cat === select.value) match = row; });
-      if (!match) { preview.classList.remove("visible"); return; }
-      feeAdmission.textContent = formatFee(match.dataset.admission);
-      feeAnnual.textContent = formatFee(match.dataset.annual);
-      feeGst.textContent = match.children[4].textContent;
-      preview.classList.add("visible");
-    });
-  })();
-
-/* ---------- Document uploads (shared Cloudinary widget) ---------- */
-  (function () {
-    var CLOUDINARY_CLOUD_NAME = "c3josacx";
-    var CLOUDINARY_UPLOAD_PRESET = "coc_bhuj_news";
-    var CLOUDINARY_FOLDER = "coc-bhuj-news/membership-applications";
-
-    var docFields = [
-      { key: "doc_certificate", label: "Certificate", required: true },
-      { key: "doc_pan", label: "PAN Card", required: true },
-      { key: "doc_registration", label: "Registration Certificate", required: true },
-      { key: "doc_gst", label: "GST / Registration Certificate", required: true },
-      { key: "doc_address_proof", label: "Address Proof", required: true },
-      { key: "doc_partnership_deed", label: "Partnership Deed / MOA / AOA", required: false },
-      { key: "doc_photo", label: "Passport Size Photograph", required: true }
-    ];
-    var paymentField = { key: "doc_payment_receipt", label: "Payment Transaction Receipt", required: true };
-
-    var uploadedDocs = {};
-    var currentUploadKey = null;
-    var uploadWidget = null;
-    var uploadGrid = document.getElementById("uploadGrid");
-    var uploadGridPayment = document.getElementById("uploadGridPayment");
-    var formStatus = document.getElementById("formStatus");
-
-    function showStatus(type, message) {
-      formStatus.className = "form-status visible " + type;
-      formStatus.textContent = message;
-    }
-
-    function buildSlot(field) {
-      var slot = document.createElement("div");
-      slot.className = "upload-slot";
-      slot.id = "slot-" + field.key;
-
-      var top = document.createElement("div");
-      top.className = "upload-slot-top";
-
-      var labelWrap = document.createElement("div");
-      var label = document.createElement("div");
-      label.className = "upload-slot-label";
-      label.textContent = field.label + (field.required ? " *" : " (optional)");
-      var status = document.createElement("div");
-      status.className = "upload-slot-status";
-      status.id = "status-" + field.key;
-      status.textContent = "No file uploaded";
-      labelWrap.appendChild(label);
-      labelWrap.appendChild(status);
-
-      var actions = document.createElement("div");
-      var uploadBtn = document.createElement("button");
-      uploadBtn.type = "button";
-      uploadBtn.className = "upload-btn-small";
-      uploadBtn.textContent = "Upload";
-      uploadBtn.addEventListener("click", function () { openWidgetFor(field.key); });
-      actions.appendChild(uploadBtn);
-
-      var removeBtn = document.createElement("button");
-      removeBtn.type = "button";
-      removeBtn.className = "upload-remove-small";
-      removeBtn.textContent = "Remove";
-      removeBtn.style.display = "none";
-      removeBtn.id = "remove-" + field.key;
-      removeBtn.addEventListener("click", function () { clearSlot(field.key); });
-      actions.appendChild(removeBtn);
-
-      top.appendChild(labelWrap);
-      top.appendChild(actions);
-      slot.appendChild(top);
-      return slot;
-    }
-
-    docFields.forEach(function (f) { uploadGrid.appendChild(buildSlot(f)); });
-    uploadGridPayment.appendChild(buildSlot(paymentField));
-
-    function clearSlot(key) {
-      delete uploadedDocs[key];
-      var slot = document.getElementById("slot-" + key);
-      var status = document.getElementById("status-" + key);
-      var removeBtn = document.getElementById("remove-" + key);
-      slot.classList.remove("uploaded");
-      status.textContent = "No file uploaded";
-      removeBtn.style.display = "none";
-    }
-
-    function markUploaded(key, url) {
-      uploadedDocs[key] = url;
-      var slot = document.getElementById("slot-" + key);
-      var status = document.getElementById("status-" + key);
-      var removeBtn = document.getElementById("remove-" + key);
-      slot.classList.add("uploaded");
-      status.textContent = "\u2713 Uploaded";
-      removeBtn.style.display = "inline-block";
-    }
-
-    function initWidget() {
-      if (typeof cloudinary === "undefined" || !cloudinary.createUploadWidget) {
-        showStatus("error", "Upload tool didn't load. Please refresh the page.");
-        return;
+      function node(tag, className, text, attributes) {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (text !== undefined && text !== null) element.textContent = String(text);
+        if (attributes) Object.entries(attributes).forEach(function (entry) { element.setAttribute(entry[0], String(entry[1])); });
+        return element;
       }
-      uploadWidget = cloudinary.createUploadWidget({
-        cloudName: CLOUDINARY_CLOUD_NAME,
-        uploadPreset: CLOUDINARY_UPLOAD_PRESET,
-        folder: CLOUDINARY_FOLDER,
-        resourceType: "auto",
-        cropping: false,
-        multiple: false,
-        maxFiles: 1,
-        sources: ["local", "camera"],
-        clientAllowedFormats: ["png", "jpg", "jpeg", "webp", "heic", "heif", "pdf"]
-      }, function (error, result) {
-        if (error) {
-          showStatus("error", "Upload failed: " + (error.message || "Unknown error"));
-          return;
+
+      function icon(name) {
+        const element = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        element.setAttribute('class', 'icon');
+        element.setAttribute('aria-hidden', 'true');
+        const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        use.setAttribute('href', '#i-' + name);
+        element.append(use);
+        return element;
+      }
+
+      function actionButton(label, className, iconName, handler) {
+        const button = node('button', className || 'btn btn-primary', label, { type: 'button' });
+        if (iconName) button.append(icon(iconName));
+        if (handler) button.addEventListener('click', handler);
+        return button;
+      }
+
+      function iconButton(label, iconName, handler) {
+        const button = actionButton(null, 'icon-button', iconName, handler);
+        button.setAttribute('aria-label', label);
+        button.title = label;
+        return button;
+      }
+
+      function safeURL(value) {
+        if (!value || typeof value !== 'string') return '';
+        try {
+          const url = new URL(value.trim());
+          return ['https:', 'http:'].includes(url.protocol) ? url.href : '';
+        } catch (_) { return ''; }
+      }
+
+      function photo(url, alt, className, fallbackIcon) {
+        const wrap = node('div', 'photo-wrap' + (className ? ' ' + className : ''));
+        const fallback = node('span', 'image-fallback', null, { 'aria-hidden': 'true' });
+        fallback.append(icon(fallbackIcon || 'image'));
+        wrap.append(fallback);
+        const source = safeURL(url);
+        if (source) {
+          const image = node('img', '', null, { src: source, alt: alt || 'Chamber photograph', loading: 'lazy', decoding: 'async' });
+          image.addEventListener('error', function () { image.remove(); wrap.setAttribute('aria-label', 'Photograph unavailable'); });
+          wrap.append(image);
         }
-        if (result && result.event === "success" && result.info && result.info.secure_url && currentUploadKey) {
-          markUploaded(currentUploadKey, result.info.secure_url);
-          formStatus.classList.remove("visible");
+        return wrap;
+      }
+
+      // A "media" field (photo OR PDF scan) can't always be shown as an
+      // <img> -- PDFs get a simple open-in-new-tab badge instead of a
+      // broken image preview.
+      function isPdfUrl(url) {
+        return (String(url || '').split('?')[0].toLowerCase()).endsWith('.pdf');
+      }
+      function mediaPreview(url, alt, className) {
+        if (isPdfUrl(url)) {
+          const wrap = node('div', 'pdf-preview' + (className ? ' ' + className : ''));
+          const link = node('a', 'pdf-preview-link', 'PDF uploaded — view file', { href: url, target: '_blank', rel: 'noopener' });
+          link.prepend(icon('file'));
+          wrap.append(link);
+          return wrap;
         }
-      });
-    }
-
-    function openWidgetFor(key) {
-      if (!uploadWidget) {
-        showStatus("error", "Upload tool not ready. Please refresh the page.");
-        return;
-      }
-      currentUploadKey = key;
-      uploadWidget.open();
-    }
-
-    initWidget();
-
-    window.__membershipDocFields = docFields;
-    window.__membershipPaymentField = paymentField;
-    window.__getUploadedDocs = function () { return uploadedDocs; };
-  })();
-
-/* ---------- Membership form submission ---------- */
-  (function () {
-    var SUPABASE_URL = "https://rvpiliwyqjowegmjcanr.supabase.co";
-    var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ2cGlsaXd5cWpvd2VnbWpjYW5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODczMDM2MjksImV4cCI6MjEwMjg3OTYyOX0.9ZQj69FLcFgqp8huYTqlWy4JGl-vYGmYZiiVUBo4Sio";
-    var supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    var form = document.getElementById("membershipForm");
-    var confirmation = document.getElementById("confirmation");
-    var formStatus = document.getElementById("formStatus");
-    var submitBtn = document.getElementById("submitBtn");
-
-    function showStatus(type, message) {
-      formStatus.className = "form-status visible " + type;
-      formStatus.textContent = message;
-    }
-
-    function val(id) { return document.getElementById(id).value.trim(); }
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      var orgName = val("orgName");
-      var orgType = val("orgType");
-      var natureBusiness = val("natureBusiness");
-      var regAddress = val("regAddress");
-      var orgMobile = val("orgMobile");
-      var orgEmail = val("orgEmail");
-      var membershipCategory = val("membershipCategory");
-      var declared = document.getElementById("declarationCheck").checked;
-
-      if (!orgName || !orgType || !natureBusiness || !regAddress || !orgMobile || !orgEmail || !membershipCategory) {
-        showStatus("error", "Please fill in all required fields marked with an asterisk.");
-        return;
-      }
-      if (!declared) {
-        showStatus("error", "Please confirm the declaration before submitting.");
-        return;
+        return photo(url, alt, className);
       }
 
-      var uploadedDocs = window.__getUploadedDocs();
-      var docFields = window.__membershipDocFields;
-      var missingDocs = docFields.concat([window.__membershipPaymentField]).filter(function (f) { return f.required && !uploadedDocs[f.key]; });
-      if (missingDocs.length > 0) {
-        showStatus("error", "Please upload: " + missingDocs.map(function (f) { return f.label; }).join(", "));
-        return;
+      function clearContent(element) {
+        element.replaceChildren();
+        element.removeAttribute('aria-busy');
       }
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
+      function loadingState(element, label) {
+        clearContent(element);
+        element.setAttribute('aria-busy', 'true');
+        const loading = node('div', 'loading-state', null, { role: 'status' });
+        loading.append(node('div', 'loading-line', null, { 'aria-hidden': 'true' }), node('p', '', label || 'Loading...'));
+        element.append(loading);
+      }
 
-      var row = {
-        organization_name: orgName,
-        organization_type: orgType,
-        nature_of_business: natureBusiness,
-        business_activity_details: val("businessDetails") || null,
-        year_of_establishment: val("orgEstYear") || null,
-        registration_no: val("cinNo") || null,
-        gst_no: val("gstNo") || null,
-        pan_tan_no: val("panNo") || null,
-        registered_address: regAddress,
-        factory_branch_address: val("branchAddress") || null,
-        phone: val("orgPhone") || null,
-        mobile: orgMobile,
-        email: orgEmail,
-        website: val("orgWebsite") || null,
-        rep1_name: val("rep1Name") || null,
-        rep1_designation: val("rep1Designation") || null,
-        rep1_mobile: val("rep1Mobile") || null,
-        rep1_email: val("rep1Email") || null,
-        rep2_name: val("rep2Name") || null,
-        rep2_designation: val("rep2Designation") || null,
-        rep2_mobile: val("rep2Mobile") || null,
-        rep2_email: val("rep2Email") || null,
-        number_of_employees: val("numEmployees") || null,
-        annual_turnover: val("annualTurnover") || null,
-        membership_category: membershipCategory,
-        doc_certificate_url: uploadedDocs.doc_certificate || null,
-        doc_pan_url: uploadedDocs.doc_pan || null,
-        doc_registration_url: uploadedDocs.doc_registration || null,
-        doc_gst_url: uploadedDocs.doc_gst || null,
-        doc_address_proof_url: uploadedDocs.doc_address_proof || null,
-        doc_partnership_deed_url: uploadedDocs.doc_partnership_deed || null,
-        doc_photo_url: uploadedDocs.doc_photo || null,
-        doc_payment_receipt_url: uploadedDocs.doc_payment_receipt || null,
-        status: "Pending"
+      function formatDate(value) {
+        if (!value) return 'Not specified';
+        const string = String(value);
+        const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(string) ? string + 'T12:00:00' : string);
+        if (Number.isNaN(date.getTime())) return 'Not specified';
+        return new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }).format(date);
+      }
+
+      async function timedFetch(resource, options) {
+        const settings = options || {};
+        const controller = new AbortController();
+        const sourceSignal = settings.signal;
+        const abort = function () { controller.abort(); };
+        if (sourceSignal) {
+          if (sourceSignal.aborted) controller.abort();
+          else sourceSignal.addEventListener('abort', abort, { once: true });
+        }
+        const timer = setTimeout(abort, 14000);
+        try { return await fetch(resource, Object.assign({}, settings, { signal: controller.signal })); }
+        finally {
+          clearTimeout(timer);
+          if (sourceSignal) sourceSignal.removeEventListener('abort', abort);
+        }
+      }
+
+      // Every request uses the supplied anon key, never a stored user session or SDK.
+      const supabaseClient = {
+        from(table) {
+          let method = 'GET';
+          let body;
+          let execution;
+          const params = { select: '*' };
+          function checkColumn(column) {
+            if (!/^[a-z_][a-z0-9_]*$/i.test(column)) throw new Error('Invalid database column.');
+          }
+          const query = {
+            select(columns) { params.select = columns || '*'; return query; },
+            update(values) { method = 'PATCH'; body = Object.assign({}, values); return query; },
+            eq(column, value) { checkColumn(column); params[column] = 'eq.' + String(value); return query; },
+            order(column, options) {
+              checkColumn(column);
+              const settings = options || {};
+              const order = column + (settings.ascending === false ? '.desc' : '.asc') + (settings.nullsFirst ? '.nullsfirst' : '.nullslast');
+              params.order = params.order ? params.order + ',' + order : order;
+              return query;
+            },
+            range(first, last) {
+              if (!Number.isInteger(first) || !Number.isInteger(last) || first < 0 || last < first) throw new Error('Invalid record range.');
+              params.offset = first;
+              params.limit = last - first + 1;
+              return query;
+            },
+            then(onFulfilled, onRejected) {
+              if (!execution) execution = supabaseClient.request(table, { method: method, params: Object.assign({}, params), body: body }).then(
+                function (data) { return { data: data, error: null }; },
+                function (error) { return { data: null, error: error }; }
+              );
+              return execution.then(onFulfilled, onRejected);
+            }
+          };
+          return query;
+        },
+        async request(table, options) {
+          if (!Object.prototype.hasOwnProperty.call(tableOrders, table)) throw new Error('Unknown content collection.');
+          const settings = options || {};
+          const method = settings.method || 'GET';
+          const params = settings.params || {};
+          if (!['GET', 'POST', 'PATCH', 'DELETE'].includes(method)) throw new Error('Unsupported database operation.');
+          if (['PATCH', 'DELETE'].includes(method) && !/^eq\.(?:\d+|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/i.test(params.id || '')) {
+            throw new Error('Choose a specific record before changing or deleting it.');
+          }
+          const url = new URL(SUPABASE_URL + '/rest/v1/' + table);
+          Object.entries(params).forEach(function (entry) { url.searchParams.set(entry[0], String(entry[1])); });
+          // apikey identifies the project and is always the public anon key.
+          // Authorization carries the logged-in admin's session token when
+          // available -- this is what the database checks against the
+          // "authenticated"-only policies on membership_applications. With
+          // no session (shouldn't happen once the auth gate is in place),
+          // it falls back to the anon key, which those policies now reject
+          // for SELECT/UPDATE.
+          const headers = {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: 'Bearer ' + (currentSession && currentSession.access_token ? currentSession.access_token : SUPABASE_ANON_KEY),
+            Accept: 'application/json'
+          };
+          if (method !== 'GET') { headers['Content-Type'] = 'application/json'; headers.Prefer = 'return=representation'; }
+          let response;
+          try {
+            response = await timedFetch(url, {
+              method: method, headers: headers, credentials: 'omit', cache: 'no-store',
+              body: settings.body === undefined ? undefined : JSON.stringify(settings.body)
+            });
+          } catch (error) {
+            if (method !== 'GET') throw new Error('The connection ended before the change could be confirmed. Refresh the records to check whether it was saved before trying again.');
+            throw new Error(error.name === 'AbortError' ? 'The content request timed out. Please try again.' : 'The content service could not be reached.');
+          }
+          const text = await response.text();
+          let data;
+          try { data = text ? JSON.parse(text) : []; }
+          catch (_) { throw new Error('The content service returned an unexpected response (' + response.status + ').'); }
+          if (!response.ok) {
+            const detail = data && data.message ? data.message : 'The request failed (' + response.status + ').';
+            if ([401, 403].includes(response.status)) throw new Error('The existing database permissions rejected this request. ' + detail);
+            throw new Error(detail);
+          }
+          if (!Array.isArray(data)) throw new Error('The content service did not return a list of records.');
+          return data;
+        }
       };
 
-      supabaseClient
-        .from("membership_applications")
-        .insert([row])
-        .then(function (result) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Application";
-          if (result.error) {
-            showStatus("error", "Couldn't submit application: " + (result.error.message || "Unknown error"));
-            return;
+      async function fetchAllRows(table, allMedia) {
+        if (!Object.prototype.hasOwnProperty.call(tableOrders, table)) throw new Error('Unknown content collection.');
+        const rows = [];
+        const pageSize = 500;
+        let offset = 0;
+        while (true) {
+          const params = {
+            select: '*', limit: pageSize, offset: offset,
+            order: tableOrders[table].map(function (order) { return order[0] + (order[1] ? '.asc' : '.desc') + '.nullslast'; }).concat('id.asc').join(',')
+          };
+          if (table === 'site_media' && !allMedia) params.active = 'eq.true';
+          const batch = await supabaseClient.request(table, { params: params });
+          rows.push.apply(rows, batch);
+          if (batch.length < pageSize) break;
+          offset += pageSize;
+        }
+        return rows;
+      }
+
+      function readTable(table, options) {
+        const settings = options || {};
+        const key = table + (settings.allMedia ? ':admin' : ':public');
+        if (settings.force && state.pending.has(key)) {
+          return state.pending.get(key).catch(function () {}).then(function () { return readTable(table, settings); });
+        }
+        if (settings.force) state.cache.delete(key);
+        if (state.pending.has(key)) return state.pending.get(key);
+        if (state.cache.has(key)) return Promise.resolve(state.cache.get(key));
+        const promise = fetchAllRows(table, !!settings.allMedia).then(function (rows) {
+          state.cache.set(key, rows);
+          return rows;
+        }).finally(function () { state.pending.delete(key); });
+        state.pending.set(key, promise);
+        return promise;
+      }
+
+      function invalidateTable(table) {
+        state.cache.delete(table + ':public');
+        state.cache.delete(table + ':admin');
+      }
+
+      const adminSchemas = {
+        news_posts: { label: 'News post', title: 'title', fields: [
+          { name: 'title', label: 'Title (English)', required: true, wide: true, max: 500 },
+          { name: 'category', label: 'Category', max: 100 },
+          { name: 'author', label: 'Author', max: 200 },
+          { name: 'published_at', label: 'Publication date', type: 'datetime-local', wide: true },
+          { name: 'image_url', label: 'Article photograph', type: 'image', wide: true },
+          { name: 'body', label: 'Article text (English)', type: 'textarea', required: true, wide: true, rows: 10 },
+          { name: 'title_gu', label: 'Title (Gujarati) - optional', wide: true, max: 500 },
+          { name: 'body_gu', label: 'Article text (Gujarati) - optional', type: 'textarea', wide: true, rows: 10 }
+        ] },
+        directory_members: { label: 'Directory member', title: 'business_name', fields: [
+          { name: 'business_name', label: 'Business name', required: true, wide: true, max: 250 },
+          { name: 'contact_person_name', label: 'Contact person', max: 200 },
+          { name: 'category', label: 'Category', max: 100 },
+          { name: 'designation', label: 'Designation', max: 150 },
+          { name: 'phone', label: 'Phone', type: 'tel', max: 50 },
+          { name: 'email', label: 'Email', type: 'email', max: 254 },
+          { name: 'address', label: 'Business address', wide: true, max: 600 },
+          { name: 'logo_url', label: 'Business logo', type: 'image', wide: true },
+          { name: 'description', label: 'Description', type: 'textarea', wide: true, rows: 5 }
+        ] },
+        gallery_images: { label: 'Gallery photograph', title: 'caption', fields: [
+          { name: 'caption', label: 'Caption', wide: true, max: 500 },
+          { name: 'event_name', label: 'Event name', wide: true, max: 250 },
+          { name: 'image_url', label: 'Photograph', type: 'image', required: true, wide: true }
+        ] },
+        committee_members: { label: 'Committee member', title: 'name', fields: [
+          { name: 'name', label: 'Full name', required: true, wide: true, max: 200 },
+          { name: 'designation', label: 'Designation', max: 150 },
+          { name: 'sort_order', label: 'Display order', type: 'number' },
+          { name: 'business_name', label: 'Business name', wide: true, max: 250 },
+          { name: 'phone', label: 'Phone', type: 'tel', max: 50 },
+          { name: 'email', label: 'Email', type: 'email', max: 254 },
+          { name: 'photo_url', label: 'Profile photograph', type: 'image', wide: true }
+        ] },
+        projects: { label: 'Community project', title: 'title', fields: [
+          { name: 'title', label: 'Project title', required: true, wide: true, max: 500 },
+          { name: 'status', label: 'Project status', type: 'select', required: true, options: ['In Progress', 'Upcoming', 'Completed'], defaultValue: 'Upcoming', wide: true },
+          { name: 'start_date', label: 'Start date', type: 'date' },
+          { name: 'target_date', label: 'Target date', type: 'date' },
+          { name: 'image_url', label: 'Project photograph', type: 'image', wide: true },
+          { name: 'description', label: 'Project description', type: 'textarea', wide: true, rows: 7 }
+        ] },
+        site_media: { label: 'Site media', title: 'caption', fields: [
+          { name: 'type', label: 'Media type', type: 'select', required: true, options: ['logo', 'hero'], defaultValue: 'hero' },
+          { name: 'sort_order', label: 'Display order', type: 'number' },
+          { name: 'caption', label: 'Caption / alternative text', max: 500, wide: true },
+          { name: 'image_url', label: 'Image', type: 'image', required: true, wide: true },
+          { name: 'active', label: 'Active on the public site', type: 'checkbox', defaultValue: true, wide: true }
+        ] },
+        newspaper_clippings: { label: 'Newspaper clipping', title: 'publication_name', fields: [
+          { name: 'publication_name', label: 'Newspaper / publication name', required: true, wide: true, max: 250 },
+          { name: 'clipping_date', label: 'Date it was published', type: 'date' },
+          { name: 'image_url', label: 'Photo or PDF scan of the clipping', type: 'media', required: true, wide: true },
+          { name: 'caption', label: 'Caption (what the clipping is about)', type: 'textarea', wide: true, rows: 4 }
+        ] }
+      };
+      const externalScripts = new Map();
+
+      function loadExternalScript(url, globalName) {
+        if (window[globalName]) return Promise.resolve();
+        if (externalScripts.has(url)) return externalScripts.get(url);
+        const promise = new Promise(function (resolve, reject) {
+          const script = document.createElement('script');
+          const timeout = setTimeout(function () { script.remove(); reject(new Error('The image upload service took too long to load. Please try again.')); }, 14000);
+          script.src = url;
+          script.async = true;
+          script.onload = function () { clearTimeout(timeout); if (window[globalName]) resolve(); else reject(new Error('The external service did not initialise. Please try again.')); };
+          script.onerror = function () { clearTimeout(timeout); script.remove(); reject(new Error('The external service could not load. Check your connection and try again.')); };
+          document.head.append(script);
+        }).catch(function (error) { externalScripts.delete(url); throw error; });
+        externalScripts.set(url, promise);
+        return promise;
+      }
+
+      function adminRecordTitle(record) {
+        const schema = adminSchemas[state.adminTable];
+        if (state.adminTable === 'site_media') return record.caption || (record.type === 'logo' ? 'Chamber logo' : 'Hero photograph');
+        return record[schema.title] || record.event_name || schema.label;
+      }
+
+      function adminRecordMeta(record) {
+        if (state.adminTable === 'site_media') return (record.active ? 'Active' : 'Inactive') + ' | ' + record.type + ' | Order ' + (record.sort_order === null ? 'not set' : record.sort_order);
+        if (state.adminTable === 'committee_members') return [record.designation, 'Order ' + (record.sort_order === null ? 'not set' : record.sort_order)].filter(Boolean).join(' | ');
+        return [record.category || record.status || record.event_name, formatDate(record.created_at)].filter(Boolean).join(' | ');
+      }
+
+      function confirmDiscard() {
+        if (state.adminBusy) return false;
+        if (!state.adminDirty || confirm('Discard your unsaved changes?')) { state.adminDirty = false; return true; }
+        return false;
+      }
+
+      function setAdminBusy(busy) {
+        state.adminBusy = busy;
+        ['#adminAdd', '#adminRefresh', '#adminSearch'].forEach(function (selector) { $(selector).disabled = busy; });
+        $$('button, input, select, textarea', $('#adminEditor')).forEach(function (element) { element.disabled = busy; });
+        $$('button', $('#adminRecords')).forEach(function (element) { element.disabled = busy; });
+        updateAdminTabLocks();
+      }
+
+      function renderAdminRecords() {
+        const list = $('#adminRecords');
+        list.replaceChildren();
+        list.removeAttribute('aria-busy');
+        const query = $('#adminSearch').value.trim().toLocaleLowerCase();
+        const records = state.adminRows.filter(function (record) { return !query || (adminRecordTitle(record) + ' ' + adminRecordMeta(record)).toLocaleLowerCase().includes(query); });
+        if (!records.length) {
+          const message = node('div', 'empty-state');
+          message.style.padding = '30px 13px';
+          message.append(node('p', '', state.adminRows.length ? 'No matching records.' : 'No records in this collection yet.'));
+          list.append(message);
+          return;
+        }
+        records.forEach(function (record) {
+          const selected = record.id === state.editingId;
+          const button = actionButton(null, 'record-item' + (selected ? ' active' : ''), null, function () {
+            if (!confirmDiscard()) return;
+            renderEditor(record);
+            renderAdminRecords();
+            focusEditor();
+          });
+          button.setAttribute('aria-pressed', String(selected));
+          button.append(node('strong', '', adminRecordTitle(record)), node('span', '', adminRecordMeta(record)));
+          list.append(button);
+        });
+      }
+
+      function renderEditorEmpty() {
+        state.editingId = null;
+        state.adminDirty = false;
+        const panel = $('#adminEditor');
+        panel.replaceChildren();
+        const empty = node('div', 'empty-state');
+        const symbol = node('div', 'state-icon'); symbol.append(icon('file'));
+        empty.append(symbol, node('h2', '', 'Your next update starts here.'), node('p', '', 'Choose an existing record to edit, or add something new to the Chamber portal.'), actionButton('Add a record', 'btn btn-primary btn-small', 'plus', function () {
+          if (!confirmDiscard()) return;
+          renderEditor(null);
+          renderAdminRecords();
+          focusEditor();
+        }));
+        panel.append(empty);
+      }
+
+      function focusEditor() {
+        const first = $('#recordForm input:not([type="checkbox"]), #recordForm select, #recordForm textarea');
+        if (first) first.focus();
+      }
+
+      async function loadAdminRecords(force, selectedId) {
+        if (state.adminLoading) return state.adminLoading;
+        const table = state.adminTable;
+        setAdminBusy(true);
+        loadingState($('#adminRecords'), 'Loading records...');
+        state.adminLoading = (async function () {
+          try {
+            const rows = await readTable(table, { allMedia: true, force: force });
+            if (table !== state.adminTable) return;
+            state.adminRows = rows;
+            const selected = rows.find(function (record) { return record.id === (selectedId || state.editingId); });
+            if (selected) renderEditor(selected);
+            else renderEditorEmpty();
+            renderAdminRecords();
+          } catch (error) {
+            const list = $('#adminRecords');
+            clearContent(list);
+            const empty = node('div', 'empty-state');
+            empty.style.padding = '25px 10px';
+            empty.append(node('h3', '', 'Records unavailable'), node('p', '', error.message), actionButton('Try again', 'btn btn-primary btn-small', 'refresh', function () { loadAdminRecords(true); }));
+            list.append(empty);
+            renderEditorEmpty();
+          } finally { setAdminBusy(false); state.adminLoading = null; }
+        })();
+        return state.adminLoading;
+      }
+
+      function editableFields() {
+        return adminSchemas[state.adminTable].fields.filter(function (field) {
+          return !(state.adminTable === 'directory_members' && field.name === 'designation' && state.adminRows.length && !state.adminRows.some(function (row) { return Object.prototype.hasOwnProperty.call(row, 'designation'); }));
+        });
+      }
+
+      function datetimeInput(value) {
+        if (!value) return '';
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return '';
+        return new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+      }
+
+      function renderEditor(record) {
+        const panel = $('#adminEditor');
+        panel.replaceChildren();
+        state.editingId = record ? record.id : null;
+        state.adminDirty = false;
+        const schema = adminSchemas[state.adminTable];
+        const header = node('div', 'editor-title');
+        header.append(node('h2', '', (record ? 'Edit ' : 'New ') + schema.label.toLowerCase()), node('span', 'badge', record ? 'Existing record' : 'Not saved'));
+        const form = node('form', '', null, { id: 'recordForm' });
+        const grid = node('div', 'form-grid');
+        editableFields().forEach(function (field) {
+          const wrap = node('div', 'field' + (field.wide ? ' field-wide' : '') + (field.type === 'checkbox' ? ' checkbox-row' : ''));
+          const label = node('label', '', field.label + (field.required ? ' *' : ''), { for: 'edit-' + field.name });
+          let input;
+          if (field.type === 'textarea') input = node('textarea', '', null, { rows: field.rows || 5 });
+          else if (field.type === 'select') {
+            input = node('select');
+            const options = field.options.slice();
+            if (record && record[field.name] && !options.includes(record[field.name])) options.unshift(record[field.name]);
+            options.forEach(function (option) { input.append(node('option', '', option === 'logo' ? 'Chamber logo' : option === 'hero' ? 'Hero photograph' : option, { value: option })); });
+          } else input = node('input', '', null, { type: (field.type === 'image' || field.type === 'media') ? 'url' : (field.type || 'text') });
+          input.id = 'edit-' + field.name;
+          input.name = field.name;
+          input.required = !!field.required;
+          input.autocomplete = 'off';
+          if (field.max) input.maxLength = field.max;
+          if (field.type === 'number') input.step = '1';
+          const value = record ? record[field.name] : field.defaultValue;
+          if (field.type === 'checkbox') input.checked = value === undefined ? false : !!value;
+          else if (field.type === 'datetime-local') input.value = datetimeInput(record ? value : new Date().toISOString());
+          else if (field.type === 'date') input.value = value ? String(value).slice(0, 10) : '';
+          else if (field.type === 'number') input.value = value === undefined || value === null ? '0' : String(value);
+          else input.value = value === undefined || value === null ? '' : String(value);
+          input.addEventListener('input', function () { input.setCustomValidity(''); state.adminDirty = true; });
+          input.addEventListener('change', function () { input.setCustomValidity(''); state.adminDirty = true; });
+          if (field.type === 'image' || field.type === 'media') {
+            const isMedia = field.type === 'media';
+            input.placeholder = isMedia ? 'https://... or upload a photo/PDF' : 'https://... or upload an image';
+            const row = node('div', 'upload-row');
+            const preview = node('div');
+            const refreshPreview = function () {
+              preview.replaceChildren();
+              if (safeURL(input.value)) preview.append(isMedia ? mediaPreview(input.value, field.label + ' preview', 'upload-preview') : photo(input.value, field.label + ' preview', 'upload-preview'));
+            };
+            const upload = actionButton(isMedia ? 'Upload photo or PDF' : 'Upload image', 'btn btn-outline btn-small', 'upload', function () { uploadImage(input, refreshPreview, upload, isMedia); });
+            row.append(input, upload);
+            input.addEventListener('change', refreshPreview);
+            refreshPreview();
+            wrap.append(label, row, node('span', 'form-privacy', isMedia ? 'PNG, JPG, JPEG, WEBP, HEIC, HEIF or PDF. Maximum 10 MB.' : 'PNG, JPG, JPEG, GIF, WEBP, HEIC, HEIF. Maximum 10 MB.'), preview);
+          } else if (field.type === 'checkbox') wrap.append(input, label);
+          else wrap.append(label, input);
+          grid.append(wrap);
+        });
+        const error = node('p', 'form-error', null, { id: 'editorError', role: 'alert' });
+        error.hidden = true;
+        const actions = node('div', 'editor-actions');
+        const save = node('button', 'btn btn-primary', record ? 'Save changes' : 'Create record', { type: 'submit', id: 'saveRecordButton' });
+        save.append(icon('check'));
+        actions.append(save);
+        if (record) actions.append(actionButton('Delete record', 'btn btn-danger btn-small', 'trash', deleteRecord));
+        form.append(grid, error, actions);
+        form.addEventListener('input', function (event) {
+          if (event.target.name === 'start_date' || event.target.name === 'target_date') {
+            const targetDate = form.elements.namedItem('target_date');
+            if (targetDate) targetDate.setCustomValidity('');
           }
-          formStatus.classList.remove("visible");
-          window.__lastSubmission = { row: row, docs: JSON.parse(JSON.stringify(uploadedDocs)), submittedAt: new Date() };
-          form.style.display = "none";
-          confirmation.style.display = "block";
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        })
-        .catch(function (err) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Application";
-          showStatus("error", "Couldn't submit application: " + (err.message || "Unknown error"));
         });
-    });
+        form.addEventListener('submit', saveRecord);
+        panel.append(header, form);
+      }
 
-    document.getElementById("resetForm").addEventListener("click", function () {
-      form.reset();
-      document.querySelectorAll(".upload-slot").forEach(function (slot) {
-        var key = slot.id.replace("slot-", "");
-        slot.classList.remove("uploaded");
-        document.getElementById("status-" + key).textContent = "No file uploaded";
-        document.getElementById("remove-" + key).style.display = "none";
-      });
-      for (var k in window.__getUploadedDocs()) { delete window.__getUploadedDocs()[k]; }
-      document.getElementById("feePreview").classList.remove("visible");
-      confirmation.style.display = "none";
-      form.style.display = "block";
-    });
-  })();
-
-/* ---------- Printable application copy (info + attached documents) ---------- */
-  (function () {
-    var btn = document.getElementById("printCopyBtn");
-    var note = document.getElementById("printCopyNote");
-    var sheet = document.getElementById("printSheet");
-    var MAX_PDF_PAGES = 8;
-
-    var SECTIONS = [
-      ["Organisation details", [
-        ["organization_name", "Name of organisation"], ["organization_type", "Type of organisation"],
-        ["nature_of_business", "Nature of business"], ["business_activity_details", "Business activity details"],
-        ["year_of_establishment", "Year of establishment"], ["registration_no", "Registration / CIN no."],
-        ["gst_no", "GST no."], ["pan_tan_no", "PAN / TAN no."]]],
-      ["Address and contact", [
-        ["registered_address", "Registered address"], ["factory_branch_address", "Factory / branch address"],
-        ["phone", "Phone"], ["mobile", "Mobile"], ["email", "Email"], ["website", "Website"]]],
-      ["Authorised representatives", [
-        ["rep1_name", "Representative 1 - name"], ["rep1_designation", "Representative 1 - designation"],
-        ["rep1_mobile", "Representative 1 - mobile"], ["rep1_email", "Representative 1 - email"],
-        ["rep2_name", "Representative 2 - name"], ["rep2_designation", "Representative 2 - designation"],
-        ["rep2_mobile", "Representative 2 - mobile"], ["rep2_email", "Representative 2 - email"]]],
-      ["Business profile and membership", [
-        ["number_of_employees", "Number of employees"], ["annual_turnover", "Annual turnover"],
-        ["membership_category", "Membership category"]]]
-    ];
-
-    function el(tag, cls, text) {
-      var e = document.createElement(tag);
-      if (cls) e.className = cls;
-      if (text != null) e.textContent = text;
-      return e;
-    }
-
-    // Cloudinary turns any upload (including HEIC/WEBP and each PDF page)
-    // into a plain JPG, which every printer and browser can handle.
-    function cloudinaryJpg(url, page) {
-      var m = url.indexOf("/upload/");
-      if (m === -1 || url.indexOf("/raw/upload/") !== -1) return null;
-      var t = "f_jpg,q_auto,w_1500" + (page ? ",pg_" + page : "");
-      return url.slice(0, m + 8) + t + "/" + url.slice(m + 8);
-    }
-    function isPdf(url) { return /\.pdf($|\?)/i.test(url.split("#")[0]); }
-
-    function loadImg(src) {
-      return new Promise(function (resolve) {
-        var img = new Image();
-        var done = false;
-        var timer = setTimeout(function () { if (!done) { done = true; resolve(null); } }, 20000);
-        img.onload = function () { if (!done) { done = true; clearTimeout(timer); resolve(img); } };
-        img.onerror = function () { if (!done) { done = true; clearTimeout(timer); resolve(null); } };
-        img.className = "ps-page";
-        img.alt = "";
-        img.src = src;
-      });
-    }
-
-    async function docSection(label, url) {
-      var box = el("div", "ps-doc");
-      box.appendChild(el("h2", null, "Attached document: " + label));
-      var added = 0;
-      if (isPdf(url)) {
-        for (var p = 1; p <= MAX_PDF_PAGES; p++) {
-          var src = cloudinaryJpg(url, p);
-          if (!src) break;
-          var img = await loadImg(src);
-          if (!img) break;
-          if (p > 1) { var pb = el("div", "ps-doc-cont"); pb.style.breakBefore = "page"; pb.appendChild(img); box.appendChild(pb); }
-          else box.appendChild(img);
-          added++;
+      async function saveRecord(event) {
+        event.preventDefault();
+        if (state.adminBusy) return;
+        const form = event.currentTarget;
+        const fields = editableFields();
+        const payload = {};
+        for (const field of fields) {
+          const input = form.elements.namedItem(field.name);
+          if (!input) continue;
+          input.setCustomValidity('');
+          if (field.type === 'checkbox') { payload[field.name] = input.checked; continue; }
+          const raw = input.value.trim();
+          if (field.required && !raw) { input.setCustomValidity('Please complete this field.'); form.reportValidity(); return; }
+          if (field.type === 'number') {
+            const number = raw === '' ? null : Number(raw);
+            if (number !== null && !Number.isSafeInteger(number)) { input.setCustomValidity('Enter a whole number.'); form.reportValidity(); return; }
+            payload[field.name] = number;
+          } else if (field.type === 'datetime-local') {
+            if (raw && Number.isNaN(new Date(raw).getTime())) { input.setCustomValidity('Choose a valid date and time.'); form.reportValidity(); return; }
+            payload[field.name] = raw ? new Date(raw).toISOString() : null;
+          } else if (field.type === 'image' || field.type === 'media') {
+            if (raw && !safeURL(raw)) { input.setCustomValidity('Enter a valid http or https URL.'); form.reportValidity(); return; }
+            payload[field.name] = raw ? safeURL(raw) : null;
+          } else payload[field.name] = raw || null;
         }
-      } else {
-        var s1 = cloudinaryJpg(url) || url;
-        var im = await loadImg(s1);
-        if (im) { box.appendChild(im); added++; }
+        if (!form.reportValidity()) return;
+        if (payload.start_date && payload.target_date && payload.target_date < payload.start_date) {
+          const date = form.elements.namedItem('target_date');
+          date.setCustomValidity('The target date must be on or after the start date.'); form.reportValidity(); return;
+        }
+        const table = state.adminTable;
+        const editingId = state.editingId;
+        const button = $('#saveRecordButton');
+        const error = $('#editorError');
+        error.hidden = true;
+        button.textContent = 'Saving...';
+        setAdminBusy(true);
+        try {
+          const params = { select: '*' };
+          if (editingId) params.id = 'eq.' + editingId;
+          const records = await supabaseClient.request(table, { method: editingId ? 'PATCH' : 'POST', params: params, body: payload });
+          if (records.length !== 1) throw new Error('No saved record was returned. Refresh the records to check the result and your existing database permissions before trying again.');
+          state.adminDirty = false;
+          invalidateTable(table);
+          await loadAdminRecords(true, records[0].id);
+          toast(editingId ? 'Your changes have been saved to the Chamber portal.' : 'The new record has been saved.');
+        } catch (failure) {
+          if (error.isConnected) { error.textContent = failure.message || 'The record could not be saved. Please try again.'; error.hidden = false; }
+          else toast(failure.message || 'The record could not be saved. Please check your connection.');
+        } finally {
+          if (button.isConnected) { button.replaceChildren(document.createTextNode(editingId ? 'Save changes' : 'Create record'), icon('check')); }
+          setAdminBusy(false);
+        }
       }
-      if (!added) {
-        var w = el("div", "ps-warn", "This document could not be included in the copy. Please print the original file and attach it to the hard copy: " + label + ".");
-        box.appendChild(w);
+
+      async function deleteRecord() {
+        if (state.adminBusy || !state.editingId) return;
+        const record = state.adminRows.find(function (row) { return row.id === state.editingId; });
+        if (!record) return;
+        if (!confirm('Permanently delete "' + adminRecordTitle(record) + '"? This cannot be undone.')) return;
+        const table = state.adminTable;
+        const id = state.editingId;
+        const error = $('#editorError');
+        error.hidden = true;
+        setAdminBusy(true);
+        try {
+          const records = await supabaseClient.request(table, { method: 'DELETE', params: { id: 'eq.' + id, select: 'id' } });
+          if (records.length !== 1) throw new Error('No deleted record was returned. It may no longer exist, or the existing database permissions may not allow this operation.');
+          state.adminDirty = false;
+          state.editingId = null;
+          invalidateTable(table);
+          await loadAdminRecords(true);
+          toast('The selected record has been deleted.');
+        } catch (failure) {
+          if (error.isConnected) { error.textContent = failure.message || 'The record could not be deleted.'; error.hidden = false; }
+          else toast(failure.message);
+        } finally { setAdminBusy(false); }
       }
-      return box;
-    }
 
-    async function buildSheet(sub) {
-      sheet.replaceChildren();
-      var row = sub.row;
+      async function uploadImage(input, refreshPreview, button, allowMedia) {
+        if (state.adminBusy) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = 'Opening...';
+        try {
+          await loadExternalScript('https://upload-widget.cloudinary.com/global/all.js', 'cloudinary');
+          if (!input.isConnected) return;
+          // allowMedia (used for the newspaper clippings field) also accepts
+          // PDFs, same as the public membership form's document uploads --
+          // resourceType "auto" lets Cloudinary store either an image or a
+          // raw PDF under the one field, rather than the image-only widget
+          // used for photographs elsewhere in this panel.
+          const widget = window.cloudinary.createUploadWidget({
+            cloudName: 'c3josacx',
+            uploadPreset: 'coc_bhuj_news',
+            folder: 'coc-bhuj-news',
+            clientAllowedFormats: allowMedia
+              ? ['png', 'jpg', 'jpeg', 'webp', 'heic', 'heif', 'pdf']
+              : ['png', 'jpg', 'jpeg', 'gif', 'webp', 'heic', 'heif'],
+            sources: ['local', 'url', 'camera'],
+            resourceType: allowMedia ? 'auto' : 'image',
+            multiple: false,
+            maxFiles: 1,
+            maxImageFileSize: 10485760,
+            maxFileSize: 10485760,
+            showAdvancedOptions: false,
+            showUploadMoreButton: false,
+            singleUploadAutoClose: true,
+            styles: { palette: {
+              window: '#ffffff', windowBorder: '#e5e7eb', tabIcon: '#6b1f2a', menuIcons: '#8c3341',
+              textDark: '#1f2937', textLight: '#ffffff', link: '#6b1f2a', action: '#d97706',
+              inactiveTabIcon: '#a48b91', error: '#b4233c', inProgress: '#d97706',
+              complete: '#6b1f2a', sourceBg: '#f8fafc'
+            } }
+          }, function (error, result) {
+            if (error) { toast(allowMedia ? 'The file could not be uploaded. Please try another allowed file or check your connection.' : 'The image could not be uploaded. Please try another allowed file or check your connection.'); return; }
+            if (result && result.event === 'success' && input.isConnected) {
+              const source = safeURL(result.info.secure_url);
+              if (!source) { toast('The upload did not return a valid file URL.'); return; }
+              const isPdf = (result.info.format || '').toLowerCase() === 'pdf' || isPdfUrl(source);
+              input.value = isPdf ? source : source.replace('/image/upload/', '/image/upload/f_auto,q_auto/');
+              input.dispatchEvent(new Event('input', { bubbles: true }));
+              refreshPreview();
+              toast(isPdf ? 'PDF uploaded. Save the record to publish it.' : 'Image uploaded. Save the record to publish it.');
+            }
+            if (result && result.event === 'close') widget.destroy().catch(function () {});
+          });
+          widget.open();
+        } catch (error) { toast(error.message || 'The upload service could not be opened.'); }
+        finally { if (button.isConnected) { button.disabled = false; button.replaceChildren(document.createTextNode(original), icon('upload')); } }
+      }
 
-      var head = el("div", "ps-head");
-      var logo = document.getElementById("siteLogo");
-      if (logo && logo.src && logo.classList.contains("loaded")) { var li = el("img"); li.src = logo.src; li.alt = ""; head.appendChild(li); }
-      var ht = el("div");
-      ht.appendChild(el("h1", null, "Membership Application"));
-      ht.appendChild(el("div", "ps-sub", "Chamber of Commerce Bhuj · Submitted online on " + sub.submittedAt.toLocaleString("en-IN", { dateStyle: "long", timeStyle: "short" })));
-      head.appendChild(ht);
-      sheet.appendChild(head);
-
-      SECTIONS.forEach(function (sec) {
-        var rows = sec[1].filter(function (f) { return row[f[0]]; });
-        if (!rows.length) return;
-        sheet.appendChild(el("h2", null, sec[0]));
-        var table = el("table");
-        rows.forEach(function (f) {
-          var tr = el("tr");
-          tr.appendChild(el("td", "k", f[1]));
-          tr.appendChild(el("td", null, row[f[0]]));
-          table.appendChild(tr);
+      function updateAdminTabLocks() {
+        $$('.admin-tab-button', $('#adminTabs')).forEach(function (button) {
+          button.disabled = state.adminBusy || membershipAppsState.publishing;
         });
-        sheet.appendChild(table);
-      });
-
-      var fields = (window.__membershipDocFields || []).concat([window.__membershipPaymentField]);
-      sheet.appendChild(el("h2", null, "Documents attached"));
-      var dt = el("table");
-      fields.forEach(function (f) {
-        var tr = el("tr");
-        tr.appendChild(el("td", "k", f.label));
-        tr.appendChild(el("td", null, sub.docs[f.key] ? "Uploaded online (attached on the following pages)" : (f.required ? "Not provided" : "Not provided (optional)")));
-        dt.appendChild(tr);
-      });
-      sheet.appendChild(dt);
-
-      sheet.appendChild(el("div", "ps-decl", "Declaration: I / We hereby declare that the above information is true and correct and that I / We shall abide by the rules, decisions and regulations of the Bhuj Chamber of Commerce & Industries."));
-      var sign = el("div", "ps-sign");
-      sign.appendChild(el("div", null, "Signature of authorised signatory"));
-      sign.appendChild(el("div", null, "Name and designation"));
-      sign.appendChild(el("div", null, "Company stamp and date"));
-      sheet.appendChild(sign);
-
-      for (var i = 0; i < fields.length; i++) {
-        var url = sub.docs[fields[i].key];
-        if (!url) continue;
-        note.textContent = "Preparing your documents (" + (i + 1) + " of " + fields.length + ")...";
-        sheet.appendChild(await docSection(fields[i].label, url));
       }
-    }
 
-    btn.addEventListener("click", async function () {
-      var sub = window.__lastSubmission;
-      if (!sub) { note.textContent = "Nothing to print yet. Please submit the application first."; return; }
-      btn.disabled = true;
-      btn.textContent = "Preparing...";
-      try {
-        await buildSheet(sub);
-        note.textContent = "Tip: in the print window, set Destination to \"Save as PDF\" to download it.";
-        window.print();
-      } catch (err) {
-        note.textContent = "Couldn't prepare the copy: " + (err.message || "unknown error") + ". Please try again.";
-      } finally {
-        btn.disabled = false;
-        btn.textContent = "Download / print my application copy";
-      }
-    });
-  })();
-
-/* ---------- Scroll reveal animations ---------- */
-  (function () {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var slideCounter = 0;
-    function assignDirection(el) {
-      if (!el.dataset.slideAssigned) {
-        if (slideCounter % 2 === 1) el.classList.add('reveal-right');
-        el.dataset.slideAssigned = "true";
-        slideCounter++;
-      }
-    }
-    // Reveal once and stop observing. Threshold is 0 (not 0.15) because the
-    // ratio IntersectionObserver reports is visible-area / the TARGET's own
-    // total area -- for a very tall element like .form-panel, even a full
-    // screen of visible content can be a small fraction of its total height,
-    // so a percentage threshold could take most of a scroll-through to fire,
-    // or never fire at all for tall enough content. Zero fires the moment
-    // any part of the element enters the viewport, which is what "reveal on
-    // scroll" actually means regardless of the element's height.
-    var observer = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-visible');
-          obs.unobserve(entry.target);
+      function switchAdminTab(tabId) {
+        const panel = document.getElementById(tabId);
+        const button = $$('.admin-tab-button').find(function (item) { return item.dataset.tab === tabId; });
+        if (!panel || !button || state.adminBusy || membershipAppsState.publishing || certificateRequestsState.publishing) return false;
+        if (tabId === state.adminTab) return true;
+        const table = adminTabCollections[tabId];
+        if (table && table !== state.adminTable && !confirmDiscard()) return false;
+        state.adminTab = tabId;
+        $$('.admin-tab-panel', $('#adminWorkspace')).forEach(function (item) { item.hidden = item.id !== tabId; });
+        $$('.admin-tab-button', $('#adminTabs')).forEach(function (item) {
+          const active = item.dataset.tab === tabId;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-selected', String(active));
+          item.tabIndex = active ? 0 : -1;
+        });
+        if (tabId === 'membershipApps') {
+          loadMembershipApplications();
+        } else if (tabId === 'certificateRequests') {
+          loadCertificateRequests();
+        } else {
+          panel.append($('#collectionEditor'));
+          $('#adminCollectionTitle').textContent = button.textContent;
+          if (table !== state.adminTable) {
+            state.adminTable = table;
+            state.editingId = null;
+            state.adminRows = [];
+            $('#adminSearch').value = '';
+            renderEditorEmpty();
+            loadAdminRecords(false);
+          }
         }
-      });
-    }, { threshold: 0 });
-    document.querySelectorAll('.reveal').forEach(function (el) {
-      assignDirection(el); observer.observe(el);
-    });
-    window.__observeReveal = function (el) {
-      if (el) { assignDirection(el); observer.observe(el); }
-    };
-  })();
+        return true;
+      }
 
-/* ---------- Site logo (from site_media) ---------- */
-  (function () {
-    if (typeof supabase === "undefined") return;
-    var supabaseClient = supabase.createClient("https://rvpiliwyqjowegmjcanr.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ2cGlsaXd5cWpvd2VnbWpjYW5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODczMDM2MjksImV4cCI6MjEwMjg3OTYyOX0.9ZQj69FLcFgqp8huYTqlWy4JGl-vYGmYZiiVUBo4Sio");
-    var logoImg = document.getElementById("siteLogo");
-    if (!logoImg) return;
-    supabaseClient
-      .from("site_media")
-      .select("image_url")
-      .eq("type", "logo")
-      .eq("active", true)
-      .order("sort_order", { ascending: true })
-      .limit(1)
-      .then(function (result) {
-        if (result.error) { console.error("Couldn't load site logo:", result.error.message); return; }
-        var rows = result.data || [];
-        if (rows.length > 0 && rows[0].image_url) {
-          logoImg.onload = function () { logoImg.classList.add("loaded"); };
-          logoImg.onerror = function () { console.warn("Site logo failed to load"); };
-          logoImg.src = rows[0].image_url;
+      function membershipHasUnsavedChanges() {
+        return membershipAppsState.publishing || membershipAppsState.drafts.size > 0 || Array.from(membershipAppsState.notes.values()).some(function (note) {
+          return note.promise || note.value !== note.saved;
+        });
+      }
+
+      function membershipStatus(value) {
+        const text = String(value || '').trim();
+        return membershipStatuses.find(function (status) { return status.toLowerCase() === text.toLowerCase(); }) || text || 'Pending';
+      }
+
+      function membershipFormValues(application) {
+        return {
+          status: membershipStatus(application.status),
+          membership_no: String(application.membership_no || ''),
+          receipt_no: String(application.receipt_no || '')
+        };
+      }
+
+      function updateMembershipControlLocks() {
+        $('#membershipStatusFilter').disabled = membershipAppsState.publishing;
+        $('#membershipAppsRefresh').disabled = membershipAppsState.loading || membershipAppsState.publishing;
+        $$('.application-edit input, .application-edit select, .application-edit button', $('#membershipAppsList')).forEach(function (element) {
+          element.disabled = membershipAppsState.publishing;
+        });
+        updateAdminTabLocks();
+      }
+
+      function applicationFact(list, label, value, type, wide) {
+        const item = node('div', wide ? 'application-fact-wide' : '');
+        const text = value === null || value === undefined || String(value).trim() === '' ? 'Not provided' : String(value);
+        const definition = node('dd');
+        let href = '';
+        if (type === 'phone' && value) {
+          const phone = String(value).replace(/[^\d+]/g, '');
+          if (/\d{4}/.test(phone)) href = 'tel:' + phone;
+        } else if (type === 'email' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) href = 'mailto:' + encodeURIComponent(text.trim());
+        else if (type === 'url') href = safeURL(value);
+        if (href) {
+          const link = node('a', '', text, { href: href });
+          if (type === 'url') { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
+          definition.append(link);
+        } else definition.textContent = text;
+        item.append(node('dt', '', label), definition);
+        list.append(item);
+      }
+
+      function applicationListState(title, message, retry) {
+        const list = $('#membershipAppsList');
+        clearContent(list);
+        const empty = node('div', 'empty-state');
+        const symbol = node('div', 'state-icon');
+        symbol.append(icon(retry ? 'search' : 'file'));
+        empty.append(symbol, node('h3', '', title), node('p', '', message));
+        if (retry) empty.append(actionButton('Try again', 'btn btn-primary btn-small', 'refresh', loadMembershipApplications));
+        else if (membershipAppsState.filter) empty.append(actionButton('View all applications', 'btn btn-outline btn-small', 'arrow', function () {
+          $('#membershipStatusFilter').value = '';
+          loadMembershipApplications();
+        }));
+        list.append(empty);
+      }
+
+      async function loadMembershipApplications() {
+        const version = ++membershipAppsState.requestVersion;
+        const filter = $('#membershipStatusFilter').value;
+        membershipAppsState.filter = filter;
+        membershipAppsState.loading = true;
+        membershipAppsState.notes.forEach(function (note) { note.view = null; });
+        loadingState($('#membershipAppsList'), 'Loading membership applications...');
+        $('#membershipAppsCount').textContent = '';
+        updateMembershipControlLocks();
+        try {
+          await Promise.all(Array.from(membershipAppsState.notes.keys()).map(saveOfficeNotes));
+          if (version !== membershipAppsState.requestVersion) return;
+          const applications = [];
+          const pageSize = 500;
+          for (let offset = 0; ; offset += pageSize) {
+            let query = supabaseClient.from('membership_applications').select('*')
+              .order('created_at', { ascending: false }).order('id', { ascending: false })
+              .range(offset, offset + pageSize - 1);
+            if (filter) query = query.eq('status', filter);
+            const result = await query;
+            if (version !== membershipAppsState.requestVersion) return;
+            if (result.error) throw result.error;
+            applications.push.apply(applications, result.data);
+            if (result.data.length < pageSize) break;
+          }
+          membershipAppsState.rows = applications;
+          clearContent($('#membershipAppsList'));
+          $('#membershipAppsCount').textContent = applications.length + (applications.length === 1 ? ' application' : ' applications') + (filter ? ' | ' + filter : ' | Newest first');
+          if (!applications.length) {
+            applicationListState(filter ? 'No ' + filter.toLowerCase() + ' applications.' : 'No membership applications yet.', filter ? 'Choose another status or view all applications.' : 'Submitted membership applications will appear here when they are received.', false);
+          } else applications.forEach(function (application) { $('#membershipAppsList').append(membershipApplicationCard(application)); });
+        } catch (error) {
+          if (version !== membershipAppsState.requestVersion) return;
+          $('#membershipAppsCount').textContent = 'Applications could not be loaded.';
+          applicationListState('Unable to load applications.', error.message || 'Please check your connection and try again.', true);
+        } finally {
+          if (version === membershipAppsState.requestVersion) {
+            membershipAppsState.loading = false;
+            $('#membershipAppsList').removeAttribute('aria-busy');
+            updateMembershipControlLocks();
+          }
         }
-      })
-      .catch(function (err) { console.error("Logo fetch error:", err); });
-  })();
-</script>
+      }
 
+      function membershipApplicationCard(application) {
+        const id = String(application.id);
+        const card = node('article', 'application-card card', null, { 'data-application-id': id, 'aria-labelledby': 'application-title-' + id });
+        const heading = node('div', 'application-heading');
+        const title = node('div');
+        title.append(node('h3', '', application.organization_name || 'Organization name not provided', { id: 'application-title-' + id }));
+        const meta = node('div', 'application-meta');
+        const date = node('time', '', 'Applied ' + formatDate(application.created_at));
+        if (application.created_at) date.dateTime = application.created_at;
+        meta.append(node('strong', '', application.membership_category || 'Category not provided'), date);
+        title.append(meta);
+        const status = membershipStatus(application.status);
+        const statusClass = membershipStatuses.includes(status) ? ' application-status-' + status.toLowerCase() : '';
+        heading.append(title, node('span', 'badge application-status' + statusClass, status));
+        card.append(heading);
+
+        const facts = node('dl', 'application-facts');
+        applicationFact(facts, 'Mobile', application.mobile, 'phone');
+        applicationFact(facts, 'Email', application.email, 'email');
+        applicationFact(facts, 'Representative 1', [application.rep1_name, application.rep1_designation].filter(Boolean).join('\n'));
+        card.append(facts);
+
+        const details = node('details', 'application-details');
+        details.open = membershipAppsState.openDetails.has(id);
+        details.addEventListener('toggle', function () {
+          if (details.open) membershipAppsState.openDetails.add(id); else membershipAppsState.openDetails.delete(id);
+        });
+        details.append(node('summary', '', 'Full details'));
+        const full = node('dl', 'application-facts');
+        [
+          ['Organization type', 'organization_type'], ['Nature of business', 'nature_of_business'],
+          ['Year of establishment', 'year_of_establishment'], ['Registration no.', 'registration_no'],
+          ['GST no.', 'gst_no'], ['PAN / TAN', 'pan_tan_no'],
+          ['Business activity details', 'business_activity_details', null, true],
+          ['Registered address', 'registered_address', null, true],
+          ['Factory / branch address', 'factory_branch_address', null, true],
+          ['Phone', 'phone', 'phone'], ['Website', 'website', 'url'],
+          ['Rep 1 mobile', 'rep1_mobile', 'phone'], ['Rep 1 email', 'rep1_email', 'email'],
+          ['Rep 2 name', 'rep2_name'], ['Rep 2 designation', 'rep2_designation'],
+          ['Rep 2 mobile', 'rep2_mobile', 'phone'], ['Rep 2 email', 'rep2_email', 'email'],
+          ['Number of employees', 'number_of_employees'], ['Annual turnover', 'annual_turnover']
+        ].forEach(function (field) { applicationFact(full, field[0], application[field[1]], field[2], field[3]); });
+        details.append(full);
+        card.append(details);
+
+        const documentLinks = node('div', 'application-document-links');
+        membershipDocumentFields.forEach(function (field) {
+          const url = safeURL(application[field[0]]);
+          if (!url) return;
+          const link = actionButton(field[1], 'plain-button', 'arrow-up', function () { openDocumentViewer(url, field[1]); });
+          link.setAttribute('aria-label', 'View ' + field[1]);
+          documentLinks.append(link);
+        });
+        if (documentLinks.children.length) {
+          const documents = node('div', 'application-documents');
+          documents.append(node('h4', '', 'Uploaded documents'), documentLinks);
+          card.append(documents);
+        }
+
+        const form = node('form', 'application-edit', null, { 'aria-label': 'Edit membership for ' + (application.organization_name || 'this application') });
+        const initialValues = membershipFormValues(application);
+        const draft = membershipAppsState.drafts.get(id) || initialValues;
+        [['status', 'Status'], ['membership_no', 'Membership No.'], ['receipt_no', 'Receipt No.']].forEach(function (field) {
+          const wrap = node('div', 'field');
+          const inputId = 'application-' + id + '-' + field[0];
+          let input;
+          if (field[0] === 'status') {
+            input = node('select', '', null, { id: inputId, name: field[0], required: '' });
+            if (!membershipStatuses.includes(draft.status)) input.append(node('option', '', 'Choose status', { value: '' }));
+            membershipStatuses.forEach(function (option) { input.append(node('option', '', option, { value: option })); });
+          } else input = node('input', '', null, { id: inputId, name: field[0], type: 'text', autocomplete: 'off', placeholder: field[1] === 'Membership No.' ? 'Enter membership number' : 'Enter receipt number' });
+          input.value = draft[field[0]];
+          wrap.append(node('label', '', field[1], { for: inputId }), input);
+          form.append(wrap);
+        });
+        function captureDraft() {
+          const values = {
+            status: form.elements.namedItem('status').value,
+            membership_no: form.elements.namedItem('membership_no').value,
+            receipt_no: form.elements.namedItem('receipt_no').value
+          };
+          if (Object.keys(values).some(function (key) { return values[key] !== initialValues[key]; })) membershipAppsState.drafts.set(id, values);
+          else membershipAppsState.drafts.delete(id);
+        }
+        form.addEventListener('input', captureDraft);
+        form.addEventListener('change', captureDraft);
+        const save = node('button', 'btn btn-primary', 'Save & Publish', { type: 'submit' });
+        save.append(icon('check'));
+        const error = node('p', 'form-error', null, { role: 'alert' });
+        error.hidden = true;
+        form.append(save, error);
+        form.addEventListener('submit', function (event) { event.preventDefault(); publishMembershipApplication(application, form, error, save); });
+        card.append(form, officeNotesField(application));
+        return card;
+      }
+
+      async function publishMembershipApplication(application, form, error, button) {
+        if (membershipAppsState.publishing || !form.reportValidity()) return;
+        const status = form.elements.namedItem('status').value;
+        if (!membershipStatuses.includes(status)) return;
+        const payload = {
+          status: status,
+          membership_no: form.elements.namedItem('membership_no').value.trim() || null,
+          receipt_no: form.elements.namedItem('receipt_no').value.trim() || null
+        };
+        membershipAppsState.publishing = true;
+        error.hidden = true;
+        button.textContent = 'Saving...';
+        updateMembershipControlLocks();
+        try {
+          const result = await supabaseClient.from('membership_applications')
+            .update(payload).eq('id', application.id).select('id,status,membership_no,receipt_no');
+          if (result.error) throw result.error;
+          if (!result.data || result.data.length !== 1) throw new Error('No application was updated. The record may no longer exist, or the database may have rejected the change.');
+          membershipAppsState.drafts.delete(String(application.id));
+          window.alert('Membership application saved and published successfully.');
+          await loadMembershipApplications();
+        } catch (failure) {
+          if (error.isConnected) { error.textContent = failure.message || 'The application could not be updated. Your changes have been kept.'; error.hidden = false; }
+          else toast(failure.message || 'The application could not be updated.');
+        } finally {
+          membershipAppsState.publishing = false;
+          if (button.isConnected) button.replaceChildren(document.createTextNode('Save & Publish'), icon('check'));
+          updateMembershipControlLocks();
+        }
+      }
+
+      function officeNotesField(application) {
+        const id = String(application.id);
+        const serverValue = String(application.office_notes || '');
+        let note = membershipAppsState.notes.get(id);
+        if (!note) {
+          note = { value: serverValue, saved: serverValue, requested: serverValue, promise: null, saving: false, error: '', hasSaved: false, view: null };
+          membershipAppsState.notes.set(id, note);
+        } else if (!note.promise && note.value === note.saved && !note.error) {
+          note.value = serverValue; note.saved = serverValue; note.requested = serverValue;
+        }
+        const wrap = node('div', 'application-notes');
+        const field = node('div', 'field');
+        const inputId = 'application-' + id + '-office-notes';
+        const statusId = inputId + '-status';
+        const textarea = node('textarea', '', null, { id: inputId, name: 'office_notes', rows: '3', 'aria-describedby': statusId, placeholder: 'Add a note for the office...' });
+        textarea.value = note.value;
+        textarea.addEventListener('input', function () { note.value = textarea.value; note.error = ''; updateOfficeNotesFeedback(note); });
+        function commitNotes() { note.value = textarea.value; saveOfficeNotes(id); }
+        textarea.addEventListener('change', commitNotes);
+        textarea.addEventListener('blur', commitNotes);
+        field.append(node('label', '', 'Office Notes', { for: inputId }), textarea);
+        const feedback = node('div', 'application-note-feedback');
+        const status = node('span', 'application-note-status', '', { id: statusId, role: 'status', 'aria-live': 'polite' });
+        const retry = actionButton('Retry saving notes', 'plain-button application-retry', null, function () { saveOfficeNotes(id); });
+        retry.hidden = true;
+        feedback.append(status, retry);
+        wrap.append(field, feedback);
+        note.view = { textarea: textarea, status: status, retry: retry };
+        updateOfficeNotesFeedback(note);
+        return wrap;
+      }
+
+      function updateOfficeNotesFeedback(note) {
+        if (!note.view) return;
+        const status = note.view.status;
+        status.className = 'application-note-status';
+        note.view.retry.hidden = !note.error || note.saving;
+        if (note.saving) status.textContent = 'Saving notes...';
+        else if (note.error) { status.textContent = 'Notes were not saved. ' + note.error; status.classList.add('is-error'); }
+        else if (note.value !== note.saved) status.textContent = 'Unsaved notes. Leave this field to save automatically.';
+        else if (note.hasSaved) { status.textContent = 'Notes saved.'; status.classList.add('is-saved'); }
+        else status.textContent = 'Saved automatically when you leave this field, separately from Save & Publish.';
+      }
+
+      function saveOfficeNotes(id) {
+        const note = membershipAppsState.notes.get(String(id));
+        if (!note) return Promise.resolve(true);
+        note.requested = note.value;
+        if (note.promise) return note.promise;
+        if (note.requested === note.saved) { note.error = ''; updateOfficeNotesFeedback(note); return Promise.resolve(true); }
+        note.saving = true;
+        note.error = '';
+        updateOfficeNotesFeedback(note);
+        note.promise = (async function () {
+          try {
+            while (note.requested !== note.saved) {
+              const value = note.requested;
+              const result = await supabaseClient.from('membership_applications')
+                .update({ office_notes: value || null }).eq('id', id).select('id,office_notes');
+              if (result.error) throw result.error;
+              if (!result.data || result.data.length !== 1) throw new Error('No matching application was updated.');
+              note.saved = value;
+              note.hasSaved = true;
+            }
+            return true;
+          } catch (error) {
+            note.error = error.message || 'Please check your connection and retry.';
+            return false;
+          } finally {
+            note.saving = false;
+            note.promise = null;
+            updateOfficeNotesFeedback(note);
+          }
+        })();
+        return note.promise;
+      }
+
+      // ---------- Certificate Requests (parallel to Membership Applications above) ----------
+      function certificateStatusClass(status) {
+        const key = String(status || '').trim().toLowerCase();
+        if (key === 'issued') return 'application-status-approved';
+        if (key === 'rejected') return 'application-status-rejected';
+        return 'application-status-pending';
+      }
+
+      function certificateListState(title, message, retry) {
+        const list = $('#certificateRequestsList');
+        clearContent(list);
+        const empty = node('div', 'empty-state');
+        const symbol = node('div', 'state-icon');
+        symbol.append(icon(retry ? 'search' : 'file'));
+        empty.append(symbol, node('h3', '', title), node('p', '', message));
+        if (retry) empty.append(actionButton('Try again', 'btn btn-primary btn-small', 'refresh', loadCertificateRequests));
+        else if (certificateRequestsState.filter) empty.append(actionButton('View all requests', 'btn btn-outline btn-small', 'arrow', function () {
+          $('#certificateStatusFilter').value = '';
+          loadCertificateRequests();
+        }));
+        list.append(empty);
+      }
+
+      function updateCertificateControlLocks() {
+        $('#certificateStatusFilter').disabled = certificateRequestsState.publishing;
+        $('#certificateRequestsRefresh').disabled = certificateRequestsState.loading || certificateRequestsState.publishing;
+        $$('.application-edit input, .application-edit select, .application-edit button', $('#certificateRequestsList')).forEach(function (element) {
+          element.disabled = certificateRequestsState.publishing;
+        });
+        updateAdminTabLocks();
+      }
+
+      async function loadCertificateRequests() {
+        const version = ++certificateRequestsState.requestVersion;
+        const filter = $('#certificateStatusFilter').value;
+        certificateRequestsState.filter = filter;
+        certificateRequestsState.loading = true;
+        loadingState($('#certificateRequestsList'), 'Loading certificate requests...');
+        $('#certificateRequestsCount').textContent = '';
+        updateCertificateControlLocks();
+        try {
+          const params = { select: '*', order: 'created_at.desc.nullslast,id.desc' };
+          if (filter) params.status = 'eq.' + filter;
+          const requests = await supabaseClient.request('certificate_requests', { params: params });
+          if (version !== certificateRequestsState.requestVersion) return;
+          certificateRequestsState.rows = requests;
+          clearContent($('#certificateRequestsList'));
+          $('#certificateRequestsCount').textContent = requests.length + (requests.length === 1 ? ' request' : ' requests') + (filter ? ' | ' + filter : ' | Newest first');
+          if (!requests.length) {
+            certificateListState(filter ? 'No ' + filter.toLowerCase() + ' requests.' : 'No certificate requests yet.', filter ? 'Choose another status or view all requests.' : 'Requests submitted through the Certificates page will appear here.', false);
+          } else requests.forEach(function (request) { $('#certificateRequestsList').append(certificateRequestCard(request)); });
+        } catch (error) {
+          if (version !== certificateRequestsState.requestVersion) return;
+          $('#certificateRequestsCount').textContent = 'Requests could not be loaded.';
+          certificateListState('Unable to load requests.', error.message || 'Please check your connection and try again.', true);
+        } finally {
+          if (version === certificateRequestsState.requestVersion) {
+            certificateRequestsState.loading = false;
+            $('#certificateRequestsList').removeAttribute('aria-busy');
+            updateCertificateControlLocks();
+          }
+        }
+      }
+
+      function certificateRequestCard(request) {
+        const id = String(request.id);
+        const card = node('article', 'application-card card', null, { 'data-request-id': id });
+        const heading = node('div', 'application-heading');
+        const title = node('div');
+        title.append(node('h3', '', request.full_name || 'Name not provided'));
+        const meta = node('div', 'application-meta');
+        const date = node('time', '', 'Requested ' + formatDate(request.created_at));
+        if (request.created_at) date.dateTime = request.created_at;
+        meta.append(node('strong', '', request.certificate_type || 'Type not provided'), date);
+        title.append(meta);
+        const status = certificateStatuses.includes(request.status) ? request.status : (request.status || 'Pending');
+        heading.append(title, node('span', 'badge application-status ' + certificateStatusClass(status), status));
+        card.append(heading);
+
+        const facts = node('dl', 'application-facts');
+        applicationFact(facts, 'Phone', request.phone, 'phone');
+        applicationFact(facts, 'Email', request.email, 'email');
+        applicationFact(facts, 'Business name', request.business_name);
+        card.append(facts);
+
+        if (request.purpose) {
+          const purposeFacts = node('dl', 'application-facts');
+          applicationFact(purposeFacts, 'Purpose / details', request.purpose, null, true);
+          purposeFacts.style.marginTop = '18px';
+          card.append(purposeFacts);
+        }
+
+        const form = node('form', 'application-edit', null, { 'aria-label': 'Update certificate request for ' + (request.full_name || 'this request') });
+        const statusWrap = node('div', 'field');
+        const statusSelect = node('select', '', null, { id: 'certificate-' + id + '-status', name: 'status', required: '' });
+        certificateStatuses.forEach(function (option) { statusSelect.append(node('option', '', option, { value: option })); });
+        statusSelect.value = certificateStatuses.includes(status) ? status : 'Pending';
+        statusWrap.append(node('label', '', 'Status', { for: statusSelect.id }), statusSelect);
+        form.append(statusWrap);
+        const save = node('button', 'btn btn-primary', 'Save status', { type: 'submit' });
+        save.append(icon('check'));
+        const error = node('p', 'form-error', null, { role: 'alert' });
+        error.hidden = true;
+        form.append(save, error);
+        form.addEventListener('submit', function (event) { event.preventDefault(); publishCertificateRequest(request, form, error, save); });
+        card.append(form);
+
+        const notesField = node('div', 'application-notes');
+        const fieldWrap = node('div', 'field');
+        const notesId = 'certificate-' + id + '-notes';
+        const textarea = node('textarea', '', null, { id: notesId, name: 'office_notes', rows: '3', placeholder: 'Add a note for the office...' });
+        textarea.value = request.office_notes || '';
+        const notesStatus = node('span', 'application-note-status', '');
+        function saveNotes() {
+          clearTimeout(certificateRequestsState.noteTimers.get(id));
+          const value = textarea.value;
+          notesStatus.textContent = 'Saving notes...';
+          notesStatus.className = 'application-note-status';
+          supabaseClient.request('certificate_requests', {
+            method: 'PATCH', params: { id: 'eq.' + id, select: 'id' }, body: { office_notes: value || null }
+          }).then(function () {
+            notesStatus.textContent = 'Notes saved.';
+            notesStatus.className = 'application-note-status is-saved';
+          }).catch(function (err) {
+            notesStatus.textContent = 'Notes were not saved. ' + (err.message || '');
+            notesStatus.className = 'application-note-status is-error';
+          });
+        }
+        textarea.addEventListener('blur', saveNotes);
+        fieldWrap.append(node('label', '', 'Office Notes', { for: notesId }), textarea);
+        notesField.append(fieldWrap, notesStatus);
+        card.append(notesField);
+
+        return card;
+      }
+
+      async function publishCertificateRequest(request, form, error, button) {
+        if (certificateRequestsState.publishing || !form.reportValidity()) return;
+        const status = form.elements.namedItem('status').value;
+        if (!certificateStatuses.includes(status)) return;
+        certificateRequestsState.publishing = true;
+        error.hidden = true;
+        button.textContent = 'Saving...';
+        updateCertificateControlLocks();
+        try {
+          const records = await supabaseClient.request('certificate_requests', {
+            method: 'PATCH', params: { id: 'eq.' + request.id, select: 'id,status' }, body: { status: status }
+          });
+          if (records.length !== 1) throw new Error('No request was updated. It may no longer exist, or the database may have rejected the change.');
+          toast('Certificate request updated.');
+          await loadCertificateRequests();
+        } catch (failure) {
+          if (error.isConnected) { error.textContent = failure.message || 'The request could not be updated.'; error.hidden = false; }
+          else toast(failure.message || 'The request could not be updated.');
+        } finally {
+          certificateRequestsState.publishing = false;
+          if (button.isConnected) button.replaceChildren(document.createTextNode('Save status'), icon('check'));
+          updateCertificateControlLocks();
+        }
+      }
+
+      // Shows an uploaded document (photo or PDF) in a popup on this page
+      // instead of navigating to the raw Cloudinary URL in a new tab -- the
+      // browser's address bar stays on the admin page the whole time.
+      function openDocumentViewer(url, label) {
+        const modal = $('#docModal');
+        const body = $('#docModalBody');
+        body.replaceChildren();
+        const extension = (url.split('?')[0].split('.').pop() || '').toLowerCase();
+        const isImage = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'heic', 'heif'].includes(extension);
+        if (isImage) {
+          const image = node('img', '', null, { src: url, alt: label });
+          body.append(image);
+        } else {
+          // Covers PDFs and anything else -- most browsers render PDFs
+          // inline via their built-in viewer inside an iframe; the "Open in
+          // new tab" link in the footer is the fallback for the rare
+          // browser that can't.
+          const frame = node('iframe', '', null, { src: url, title: label });
+          body.append(frame);
+        }
+        $('#docModalLabel').textContent = label;
+        $('#docModalOpenNewTab').href = url;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDocumentViewer() {
+        $('#docModal').classList.remove('open');
+        $('#docModalBody').replaceChildren();
+        document.body.style.overflow = '';
+      }
+      function setupDocumentViewer() {
+        $('#docModalClose').addEventListener('click', closeDocumentViewer);
+        $('#docModal').addEventListener('click', function (event) { if (event.target === $('#docModal')) closeDocumentViewer(); });
+        document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && $('#docModal').classList.contains('open')) closeDocumentViewer(); });
+      }
+
+      function toast(message) {
+        clearTimeout(state.toastTimer);
+        $('#toastMessage').textContent = message;
+        $('#toast').classList.add('visible');
+        state.toastTimer = setTimeout(function () { $('#toast').classList.remove('visible'); }, 5500);
+      }
+
+      function closeMenu() {
+        $('#siteNav').classList.remove('open');
+        $('#menuToggle').setAttribute('aria-expanded', 'false');
+        $('#menuToggle').setAttribute('aria-label', 'Open navigation');
+        $('#menuToggle').replaceChildren(icon('menu'));
+        document.body.classList.remove('menu-open');
+      }
+
+      function setupNavigation() {
+        $('#menuToggle').addEventListener('click', function () {
+          if ($('#siteNav').classList.contains('open')) { closeMenu(); return; }
+          $('#siteNav').classList.add('open');
+          $('#menuToggle').setAttribute('aria-expanded', 'true');
+          $('#menuToggle').setAttribute('aria-label', 'Close navigation');
+          $('#menuToggle').replaceChildren(icon('close'));
+          document.body.classList.add('menu-open');
+        });
+        document.addEventListener('click', function (event) {
+          const link = event.target.closest('a[href^="#"]');
+          if (link) closeMenu();
+          else if ($('#siteNav').classList.contains('open') && !$('#siteHeader').contains(event.target)) closeMenu();
+        });
+        document.addEventListener('keydown', function (event) {
+          if (!$('#siteNav').classList.contains('open')) return;
+          if (event.key === 'Escape') { closeMenu(); $('#menuToggle').focus(); }
+          if (event.key === 'Tab') {
+            const items = $$('a, button', $('#siteHeader')).filter(function (element) { return element.offsetParent !== null; });
+            if (event.shiftKey && document.activeElement === items[0]) { event.preventDefault(); items[items.length - 1].focus(); }
+            if (!event.shiftKey && document.activeElement === items[items.length - 1]) { event.preventDefault(); items[0].focus(); }
+          }
+        });
+        window.addEventListener('resize', function () { if (window.innerWidth > 1080) closeMenu(); }, { passive: true });
+        $('#backToTop').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: motionPreference.matches ? 'auto' : 'smooth' }); });
+        window.addEventListener('beforeunload', function (event) {
+          if (state.adminDirty || membershipHasUnsavedChanges()) { event.preventDefault(); event.returnValue = ''; }
+        });
+      }
+
+      function setupAdmin() {
+        renderEditorEmpty();
+        $('#adminTabs').addEventListener('click', function (event) {
+          const button = event.target.closest('[data-tab]');
+          if (button) switchAdminTab(button.dataset.tab);
+        });
+        $('#adminTabs').addEventListener('keydown', function (event) {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          const buttons = $$('.admin-tab-button', $('#adminTabs')).filter(function (button) { return !button.disabled; });
+          const index = buttons.indexOf(document.activeElement);
+          if (index < 0) return;
+          event.preventDefault();
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? buttons.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + buttons.length) % buttons.length;
+          buttons[next].focus();
+        });
+        $('#recordEditorLink').addEventListener('click', function (event) {
+          const tabId = Object.keys(adminTabCollections).find(function (key) { return adminTabCollections[key] === state.adminTable; });
+          if (!switchAdminTab(tabId)) event.preventDefault();
+        });
+        $('#membershipStatusFilter').addEventListener('change', loadMembershipApplications);
+        $('#membershipAppsRefresh').addEventListener('click', loadMembershipApplications);
+        $('#certificateStatusFilter').addEventListener('change', loadCertificateRequests);
+        $('#certificateRequestsRefresh').addEventListener('click', loadCertificateRequests);
+        $('#adminAdd').addEventListener('click', function () {
+          if (!confirmDiscard()) return;
+          renderEditor(null);
+          renderAdminRecords();
+          focusEditor();
+        });
+        $('#adminRefresh').addEventListener('click', function () { if (confirmDiscard()) loadAdminRecords(true); });
+        $('#adminSearch').addEventListener('input', renderAdminRecords);
+      }
+
+      let adminInitialized = false;
+
+      function start() {
+        setupNavigation();
+        setupAdmin();
+        setupDocumentViewer();
+        $('#copyrightYear').textContent = new Date().getFullYear();
+        $('#toastClose').addEventListener('click', function () { $('#toast').classList.remove('visible'); });
+        loadAdminRecords(false);
+      }
+
+      // Nothing above (record loading, membership applications, etc.) runs
+      // until a real Supabase Auth session exists. Until then the auth gate
+      // overlay covers the whole page and the rest of the admin panel stays
+      // hidden -- so there is nothing sensitive to see in the page even via
+      // View Source before logging in.
+      function showAuthGate(message) {
+        $('#authGate').hidden = false;
+        document.body.classList.add('auth-locked');
+        const error = $('#authError');
+        if (message) { error.textContent = message; error.hidden = false; }
+      }
+
+      function hideAuthGate() {
+        $('#authGate').hidden = true;
+        document.body.classList.remove('auth-locked');
+      }
+
+      function initAdminOnce() {
+        if (adminInitialized) return;
+        adminInitialized = true;
+        start();
+      }
+
+      function handleAuthChange(session) {
+        currentSession = session || null;
+        if (currentSession) { hideAuthGate(); initAdminOnce(); }
+        else { showAuthGate(); }
+      }
+
+      function setupAuthForm() {
+        const form = $('#authForm');
+        const error = $('#authError');
+        const submitButton = $('#authSubmit');
+        form.addEventListener('submit', async function (event) {
+          event.preventDefault();
+          error.hidden = true;
+          submitButton.disabled = true;
+          submitButton.textContent = 'Signing in...';
+          try {
+            const result = await supabaseAuth.auth.signInWithPassword({
+              email: $('#authEmail').value.trim(),
+              password: $('#authPassword').value
+            });
+            if (result.error) throw result.error;
+            // onAuthStateChange (registered below) picks up the new session
+            // and calls handleAuthChange, which hides the gate and starts
+            // the admin panel -- nothing further needed here on success.
+            $('#authPassword').value = '';
+          } catch (failure) {
+            error.textContent = failure.message || 'Sign in failed. Please check your email and password.';
+            error.hidden = false;
+          } finally {
+            submitButton.disabled = false;
+            submitButton.replaceChildren(document.createTextNode('Sign in'), icon('check'));
+          }
+        });
+        $('#authLogoutButton').addEventListener('click', async function () {
+          await supabaseAuth.auth.signOut();
+          // onAuthStateChange fires with a null session and shows the gate again.
+        });
+      }
+
+      async function bootstrapAuth() {
+        setupAuthForm();
+        supabaseAuth.auth.onAuthStateChange(function (_event, session) { handleAuthChange(session); });
+        const initial = await supabaseAuth.auth.getSession();
+        handleAuthChange(initial.data ? initial.data.session : null);
+      }
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bootstrapAuth, { once: true });
+      else bootstrapAuth();
+    })();
+  </script>
 </body>
 </html>
