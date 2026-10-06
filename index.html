@@ -632,6 +632,7 @@
             select(columns) { params.select = columns || '*'; return query; },
             update(values) { method = 'PATCH'; body = Object.assign({}, values); return query; },
             eq(column, value) { checkColumn(column); params[column] = 'eq.' + String(value); return query; },
+            neq(column, value) { checkColumn(column); params[column] = 'neq.' + String(value); return query; },
             order(column, options) {
               checkColumn(column);
               const settings = options || {};
